@@ -1,0 +1,17 @@
+/* ============================================================
+   SD Energy — Webfonts
+   Pretendard: modern neutral KO+EN corporate sans (SIL OFL).
+   The authentic Korean+Latin choice; covers Hangul + Latin in
+   one family. Served from jsDelivr CDN.
+   JetBrains Mono: tabular figures for data / metrics (SIL OFL).
+   ============================================================ */
+
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css");
+
+@font-face {
+  font-family: "JetBrains Mono";
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url("https://cdn.jsdelivr.net/fontsource/fonts/jetbrains-mono:vf@latest/latin-wght-normal.woff2") format("woff2-variations");
+}

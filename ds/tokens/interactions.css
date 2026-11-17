@@ -1,0 +1,55 @@
+/* ============================================================
+   SD Energy — Component interaction states
+   Hover / active / focus that inline React styles can't express.
+   Keyed to the sd-* class names the components render.
+   ============================================================ */
+
+/* ---- Button ---- */
+.sd-btn { -webkit-tap-highlight-color: transparent; }
+.sd-btn:active:not(:disabled) { transform: translateY(1px); }
+
+.sd-btn--primary:hover:not(:disabled) { background: var(--brand-primary-hover) !important; box-shadow: var(--shadow-md) !important; }
+.sd-btn--primary:active:not(:disabled) { background: var(--brand-primary-active) !important; }
+
+.sd-btn--secondary:hover:not(:disabled) { border-color: var(--border-strong) !important; background: var(--surface-subtle) !important; }
+
+.sd-btn--ghost:hover:not(:disabled) { background: var(--surface-subtle) !important; }
+
+.sd-btn--navy:hover:not(:disabled) { background: var(--surface-inverse-2) !important; }
+
+.sd-btn--link:hover:not(:disabled) { color: var(--text-link-hover) !important; text-decoration: underline; text-underline-offset: 3px; }
+
+.sd-btn:focus-visible { outline: none; box-shadow: var(--ring-focus) !important; }
+
+/* ---- Icon button ---- */
+.sd-iconbtn:hover:not(:disabled) { background: var(--surface-subtle) !important; color: var(--text-strong) !important; }
+.sd-iconbtn:active:not(:disabled) { transform: translateY(1px); }
+.sd-iconbtn:focus-visible { outline: none; box-shadow: var(--ring-focus) !important; }
+
+/* ---- Inputs ---- */
+.sd-input:hover:not(:disabled), .sd-textarea:hover:not(:disabled), .sd-select:hover:not(:disabled) { border-color: var(--border-strong) !important; }
+.sd-input:focus, .sd-textarea:focus, .sd-select:focus {
+  outline: none;
+  border-color: var(--border-brand) !important;
+  box-shadow: var(--ring-focus) !important;
+}
+.sd-input::placeholder, .sd-textarea::placeholder { color: var(--text-subtle); }
+
+/* ---- Checkbox ---- */
+.sd-check:focus-visible { outline: none; box-shadow: var(--ring-focus); }
+
+/* ---- Card (interactive) ---- */
+.sd-card--interactive { transition: var(--transition-base); }
+.sd-card--interactive:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg) !important; }
+
+/* ---- Accordion ---- */
+.sd-accordion__trigger:hover { color: var(--brand-primary) !important; }
+
+/* ---- Nav links ---- */
+.sd-navlink { transition: color var(--dur-fast) var(--ease-out); }
+.sd-navlink:hover { color: var(--brand-primary) !important; }
+
+/* ---- Link arrow motif ---- */
+.sd-arrowlink { display: inline-flex; align-items: center; gap: 6px; }
+.sd-arrowlink svg, .sd-arrowlink .sd-arrow { transition: transform var(--dur-base) var(--ease-out); }
+.sd-arrowlink:hover svg, .sd-arrowlink:hover .sd-arrow { transform: translateX(4px); }

@@ -1,0 +1,36 @@
+/* ============================================================
+   SD Energy — Effects: shadows, borders, motion, gradients
+   Soft, low-contrast elevation on white. No heavy drop shadows.
+   ============================================================ */
+
+:root {
+  /* --- Elevation (cool navy-tinted, soft) --- */
+  --shadow-xs:  0 1px 2px rgba(20, 39, 65, 0.06);
+  --shadow-sm:  0 1px 3px rgba(20, 39, 65, 0.08), 0 1px 2px rgba(20, 39, 65, 0.04);
+  --shadow-md:  0 4px 12px rgba(20, 39, 65, 0.08), 0 2px 4px rgba(20, 39, 65, 0.05);
+  --shadow-lg:  0 12px 28px rgba(20, 39, 65, 0.10), 0 4px 10px rgba(20, 39, 65, 0.05);
+  --shadow-xl:  0 24px 56px rgba(20, 39, 65, 0.14), 0 8px 18px rgba(20, 39, 65, 0.06);
+
+  /* Focus ring composite */
+  --ring-focus: 0 0 0 3px rgba(255, 122, 26, 0.35);
+  --ring-focus-navy: 0 0 0 3px rgba(31, 58, 95, 0.28);
+
+  /* --- Borders --- */
+  --border-width: 1px;
+  --border-hairline: 1px solid var(--border-subtle);
+  --border-solid:    1px solid var(--border-default);
+
+  /* --- Motion --- */
+  --ease-out:   cubic-bezier(0.22, 1, 0.36, 1); /* @kind other */
+  --ease-in-out:cubic-bezier(0.65, 0, 0.35, 1); /* @kind other */
+  --dur-fast:   120ms; /* @kind other */
+  --dur-base:   200ms; /* @kind other */
+  --dur-slow:   320ms; /* @kind other */
+  --transition-base: all var(--dur-base) var(--ease-out); /* @kind other */
+
+  /* --- Brand gradients (used sparingly: hero accents, CTA) --- */
+  --gradient-solar: linear-gradient(120deg, var(--orange-500) 0%, var(--orange-400) 100%);
+  --gradient-dawn:  linear-gradient(135deg, #FF9A3D 0%, #FF7A1A 55%, #E86400 100%); /* @kind color */
+  --gradient-navy:  linear-gradient(160deg, var(--navy-700) 0%, var(--navy-900) 100%);
+  --gradient-tint:  linear-gradient(180deg, var(--orange-50) 0%, rgba(255,244,235,0) 100%);
+}
