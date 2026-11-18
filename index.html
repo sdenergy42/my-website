@@ -117,10 +117,8 @@
   .siteRoot a, .siteRoot button, .siteRoot [data-page], .siteRoot [data-board-row], .siteRoot [data-id], .siteRoot [data-cat], .siteRoot [data-fi], .siteRoot [data-idx] { cursor: pointer; }
   .siteRoot .epcCard { cursor: default; }
   @keyframes pagein { from { opacity: 0; transform: translateY(26px); } to { opacity: 1; transform: none; } }
-  html.snapOn { scroll-snap-type: y mandatory; scroll-padding-top: 82px; }
-  @media (prefers-reduced-motion: reduce) { .snapScroller { scroll-snap-type: none; } }
+  html.snapOn { scroll-snap-type: none; }
   @keyframes procLight { 0% { opacity: 0; transform: translate3d(0,22px,0) scale(0.96); } 100% { opacity: 1; transform: none; } }
-  @keyframes procRing { 0% { opacity: 0.9; transform: scale(0.4); } 100% { opacity: 0; transform: scale(2.4); } }
   @keyframes whySweep { 0% { transform: translate3d(-101%,0,0); } 100% { transform: translate3d(101%,0,0); } }
   @keyframes numRise { 0% { opacity: 0; transform: translate3d(0,34px,0) rotate(-6deg); } 100% { opacity: 1; transform: none; } }
   .procStep { opacity: 0; }
@@ -143,28 +141,18 @@
   @keyframes sdDrawer { from { transform: translateX(100%); } to { transform: translateX(0); } }
   @media (max-width: 640px) { .certCard { grid-template-columns: 1fr !important; } }
   @media (max-width: 760px) { .greetLogo { display: none !important; } }
-  @media (max-width: 820px) { .abHero { grid-template-columns: 1fr !important; row-gap: 22px; } .abBodyBr { display: none; } }
   @media (max-width: 700px) { .heroSlogan { white-space: normal !important; text-wrap-style: balance; } }
   @media (max-width: 640px) { .histRow { grid-template-columns: 1fr !important; } .histRow > div:first-child { text-align: left !important; border-right: none !important; border-bottom: 2px solid #DCE1EA; padding-inline-end: 0 !important; padding-bottom: 12px; } .histRow > div:first-child > span:last-child { right: auto !important; left: 0 !important; top: auto !important; bottom: -7px !important; } .histRow > div:last-child { padding-top: 18px !important; } }
   .adm-scroll::-webkit-scrollbar-thumb { background: rgba(var(--sd-accent-rgb, 31,58,95),0.4); border-radius: 8px; }
   @keyframes sdFadeUp { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
-  @keyframes sdKen { from { transform: scale(1.06); } to { transform: scale(1.14); } }
   @keyframes sdFill { from { width: 0%; } to { width: 100%; } }
   @keyframes pmPulse { 0% { transform: translate(-50%,-50%) scale(1); opacity: 0.5; } 100% { transform: translate(-50%,-50%) scale(2.6); opacity: 0; } }
-  @keyframes admIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
   @keyframes introOut { 0% { opacity: 1; visibility: visible; } 100% { opacity: 0; visibility: hidden; } }
-  @keyframes introBlurIn { 0% { opacity: 0; filter: blur(18px); } 100% { opacity: 1; filter: blur(0); } }
-  @keyframes introZoomOut { 0% { transform: scale(1); } 100% { transform: scale(1.08); } }
   @keyframes sdIntroFade { 0% { opacity: 0; transform: scale(0.985); filter: blur(2px); } 14% { opacity: 1; transform: scale(1); filter: blur(0); } 55% { opacity: 1; transform: scale(1.005); filter: blur(0); } 100% { opacity: 0; transform: scale(1.045); filter: blur(5px); } }
-  @keyframes introLogoSeq { 0% { opacity: 0; filter: blur(18px); transform: scale(1); animation-timing-function: cubic-bezier(0.22,0.7,0.2,1); } 42% { opacity: 1; filter: blur(0); transform: scale(1); animation-timing-function: linear; } 77% { opacity: 1; filter: blur(0); transform: scale(1); animation-timing-function: cubic-bezier(0.4,0,0.2,1); } 100% { opacity: 1; filter: blur(0); transform: scale(1.08); } }
-  @keyframes introLogo { 0% { opacity: 0; transform: translateY(12px) scale(0.96); } 100% { opacity: 1; transform: translateY(0) scale(1); } }
-  @keyframes introLine { 0% { width: 0; opacity: 0; } 100% { width: 220px; opacity: 1; } }
-  @keyframes introText { 0% { opacity: 0; letter-spacing: 0.5em; } 100% { opacity: 1; letter-spacing: 0.34em; } }
   .gridAreas { display: grid; gap: 20px; grid-template-columns: 1fr; }
   @media (min-width: 640px) { .gridAreas { grid-template-columns: repeat(2, 1fr); } }
   @media (min-width: 1080px) { .gridAreas { grid-template-columns: repeat(4, 1fr); } }
 
-  @keyframes sdScrollHint { 0% { transform: scaleY(0); transform-origin: top; opacity: 0; } 40% { transform: scaleY(1); transform-origin: top; opacity: 1; } 60% { transform: scaleY(1); transform-origin: bottom; opacity: 1; } 100% { transform: scaleY(0); transform-origin: bottom; opacity: 0; } }
   .arrowBtn .arw { transition: transform 0.22s cubic-bezier(0.16,1,0.3,1); }
   .arrowBtn:hover .arw { transform: translateX(5px); }
   .reveal { opacity: 1; transform: none; }
@@ -173,7 +161,6 @@
   .reveal.armed { opacity: 0; transform: translateY(22px); transition: opacity 1.15s cubic-bezier(0.16,1,0.3,1), transform 1.15s cubic-bezier(0.16,1,0.3,1); will-change: opacity, transform; }
   .reveal.armed.in { opacity: 1; transform: none; }
   @keyframes pgRise { 0% { opacity: 0; transform: translate3d(0,26px,0); } 100% { opacity: 1; transform: none; } }
-  @keyframes pgWipe { 0% { clip-path: inset(0 100% 0 0); } 100% { clip-path: inset(0 0 0 0); } }
   @keyframes wordUp { 0% { transform: translate3d(0,112%,0) rotate(3deg); opacity: 0; } 100% { transform: none; opacity: 1; } }
   @keyframes shimmerSweep { 0% { background-position: -140% 0; } 60%, 100% { background-position: 240% 0; } }
   @keyframes hdrIn { 0% { transform: scale(1.16); opacity: 0.55; } 100% { transform: scale(1.06); opacity: 1; } }
@@ -188,14 +175,10 @@
   @keyframes curtainUp { 0% { clip-path: inset(100% 0 0 0); transform: translate3d(0,40px,0); } 100% { clip-path: inset(0 0 0 0); transform: none; } }
   .curtain { animation: curtainUp 1.05s cubic-bezier(0.16,1,0.3,1) both; }
   .stickyHdr { position: sticky; top: 0; z-index: 1; }
-  .stickyHdr > .hdrInner { will-change: transform, opacity; }
-  .overSec { position: relative; z-index: 2; }
   @media (prefers-reduced-motion: reduce) { .stickyHdr { position: relative !important; } }
   @keyframes spinSlow { to { transform: rotate(360deg); } }
   @keyframes spinBack { to { transform: rotate(-360deg); } }
   @keyframes ringDraw { 0% { stroke-dashoffset: 300; opacity: 0; } 40% { opacity: 1; } 100% { stroke-dashoffset: 0; opacity: 1; } }
-  .orbBadge { animation: spinSlow 26s linear infinite; transform-origin: 50% 50%; }
-  .orbCore { animation: spinBack 26s linear infinite; transform-origin: 50% 50%; }
   .curRing { animation: spinSlow 2.4s linear infinite; transform-origin: 50% 50%; }
   .curRing circle { stroke-dasharray: 300; animation: ringDraw 1.4s cubic-bezier(0.5,0,0.2,1) both; }
   @keyframes photoSettle { 0% { transform: scale(1.1); opacity: 0.25; } 100% { transform: scale(1); opacity: 1; } }
@@ -248,19 +231,14 @@
     .reveal, .reveal.armed { opacity: 1 !important; transform: none !important; transition: none; }
   }
   @media (max-width: 900px) { .mapSplit { grid-template-columns: 1fr !important; } }
-  @keyframes tlSpin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
   @media (max-width: 700px) {
-    .tlAxis { left: 73px !important; transform: none !important; }
-    .tlRow { grid-template-columns: 62px 22px minmax(0,1fr) !important; gap: 0 12px !important; }
-  }
-  @media (max-width: 860px) { .dtlGrid { grid-template-columns: 1fr !important; gap: 22px !important; } .dtlAside > div { position: static !important; } }
+      }
   .hTab { position: relative; transition: background 0.25s ease; }
   .hTab:hover { background: #EDF1F3 !important; }
   .hTab .hNum { transition: opacity 0.2s ease; }
   .hTab:hover .hNum { color: #7b8a9c !important; }
   .hTab:hover .hSub { color: #0f1a2e !important; }
   .hTab:hover .hEn { color: #5a6b7f !important; }
-  .hTab .hTxt { position: relative; flex: 1; min-width: 0; }
   .hTab .hTitle { transition: transform 0.28s cubic-bezier(0.16,1,0.3,1); }
   .hTab .hTitle .hSub, .hTab .hTitle .hEn { transition: color 0.25s ease, opacity 0.2s ease; }
   .hTab:hover .hEn { opacity: 0; }
@@ -290,23 +268,20 @@
   .omCard:hover { transform: translateY(-5px); box-shadow: 0 20px 44px rgba(20,40,74,0.18) !important; }
   .omCard .omImg { transition: transform 0.5s cubic-bezier(0.16,1,0.3,1); }
   .omCard:hover .omImg { transform: scale(1.06); }
-  @media (max-width: 980px) { .omIntro { grid-template-columns: 1fr !important; } }
   @media (max-width: 900px) { .omGrid { grid-template-columns: repeat(2, minmax(0,1fr)) !important; } .omHead { grid-template-columns: 1fr !important; } .omHead > span { display: none; } }
-  @media (max-width: 600px) { .omGrid, .omEmgGrid { grid-template-columns: 1fr !important; } }
+  @media (max-width: 600px) { .omGrid { grid-template-columns: 1fr !important; } }
   @media (max-width: 700px) { .omRow { grid-template-columns: 1fr !important; gap: 14px; } .omLine, .omDot { display: none !important; } .omText { grid-column: 1 !important; grid-row: 1 !important; justify-content: flex-start !important; text-align: left !important; flex-direction: row !important; } .omTitleL { order: 2; } .omPhoto { grid-column: 1 !important; grid-row: 2 !important; justify-self: stretch !important; max-width: none !important; } }
   .epcCard .epcBox { transition: box-shadow 0.5s cubic-bezier(0.16,1,0.3,1); }
   .epcCard:hover .epcBox { box-shadow: 0 22px 48px rgba(14,28,52,0.26) !important; }
   .epcCard .epcImg { transition: transform 0.5s cubic-bezier(0.16,1,0.3,1); }
   .epcCard:hover .epcImg { transform: scale(1.06); }
-  @media (max-width: 860px) { .dirGrid { grid-template-columns: 1fr !important; } }
   @media (max-width: 760px) { .hdrMark { gap: 3px !important; top: 0 !important; } .hdrMarkImg { height: 34px !important; } .hdrMarkTxt { font-size: 14.5px !important; letter-spacing: 2px !important; margin-right: -2px !important; } }
   @media (max-width: 380px) { .hdrMark { gap: 3px !important; } .hdrMarkImg { height: 31px !important; } .hdrMarkTxt { font-size: 13.5px !important; letter-spacing: 1.8px !important; margin-right: -1.8px !important; } }
   @media (max-width: 1000px) { .essGrid { grid-template-columns: repeat(2, minmax(0,1fr)) !important; } }
-  @media (max-width: 600px) { .essGrid, .essNeed { grid-template-columns: 1fr !important; } }
+  @media (max-width: 600px) { .essGrid { grid-template-columns: 1fr !important; } }
   @media (max-width: 820px) { .essIssueGrid { grid-template-columns: 1fr !important; } }
   @media (max-width: 760px) { .epcGrid { grid-template-columns: repeat(2, minmax(0,1fr)) !important; direction: ltr !important; } .epcLine, .epcCurve, .epcDot { display: none !important; } .epcSnake { padding: 0 !important; } .epcRow { padding-bottom: 34px !important; } }
-  @media (max-width: 900px) { .procGrid { grid-template-columns: repeat(2, minmax(0,1fr)) !important; } .revGrid { grid-template-columns: 1fr !important; } .revPlus { padding: 14px 0 !important; } .flowGrid { grid-template-columns: 1fr !important; } }
-  @media (max-width: 720px) { .calcGrid, .sumGrid { grid-template-columns: 1fr !important; } }
+  @media (max-width: 900px) { .procGrid { grid-template-columns: repeat(2, minmax(0,1fr)) !important; } }
   @media (max-width: 520px) { .procGrid { grid-template-columns: 1fr !important; } }
   .pgHead { align-items: flex-start !important; text-align: left !important; }
   .pgHead > div { width: 100%; text-align: left; }
@@ -339,8 +314,8 @@
   @media (max-width: 760px) { .svGrid { grid-template-columns: minmax(0,1fr) !important; } }
   @media (max-width: 760px) { .abBizGrid { grid-template-columns: repeat(2, minmax(0,1fr)) !important; grid-template-rows: auto !important; height: auto !important; } .abBizGrid > div:first-child { grid-row: auto !important; grid-column: 1 / -1 !important; min-height: 220px; } .abBizGrid > div:not(:first-child) { min-height: 150px; } }
   @media (max-width: 440px) { .abBizGrid { grid-template-columns: minmax(0,1fr) !important; } }
-  .abBizGrid > div:not(:first-child) span[style*="#ECE7DC"] { transition: background-color 0.25s ease; }
-  .abBizGrid > div:not(:first-child):hover span[style*="#ECE7DC"] { background-color: #DDE6B8 !important; }
+  .abBizGrid > div:not(:first-child) span[style*="border-radius: 50%"] { transition: background-color 0.25s ease !important; }
+  .abBizGrid > div:not(:first-child):hover span[style*="border-radius: 50%"] { background: #DDE6B8 !important; }
   @media (max-width: 760px) {
     .devProc, .essProc { max-width: 100% !important; padding: 0 !important; display: block !important; margin-left: 0 !important; margin-right: 0 !important; }
     .devProc > div, .essProc > div { display: flex !important; flex-direction: column !important; min-height: 0 !important; padding-bottom: 0 !important; }
@@ -384,18 +359,15 @@
   .geoDot::before { content: ""; position: absolute; inset: 0; border-radius: 50%; background: radial-gradient(circle, rgba(181,203,59,0.8) 0%, rgba(181,203,59,0.4) 45%, rgba(181,203,59,0) 70%); animation: dotHalo 2.3s cubic-bezier(0.25,0.6,0.35,1) infinite; animation-delay: inherit; }
   .geoDot > span { position: relative; animation: dotCore 2.3s ease-in-out infinite; animation-delay: inherit; }
   @media (prefers-reduced-motion: reduce) { .geoDot::before, .geoDot > span { animation: none; } }
-  .geoArcDraw { stroke-dashoffset: 1; transition: none; }
-  .reveal.in .geoArcDraw, .reveal:not(.armed) .geoArcDraw { stroke-dashoffset: 0; transition: stroke-dashoffset 2s cubic-bezier(0.65,0,0.35,1) 0.3s; }
-  @media (prefers-reduced-motion: reduce) { .geoArcDraw { stroke-dashoffset: 0 !important; transition: none !important; } }
+  @keyframes geoArcFlow { from { stroke-dashoffset: 16; } to { stroke-dashoffset: 0; } }
+  .geoArcFlow { animation: geoArcFlow 0.75s linear infinite; }
+  @media (prefers-reduced-motion: reduce) { .geoArcFlow { animation: none; } }
 </style>
 <style>
   html body .siteRoot, html body .siteRoot *, html body [data-about-snap], html body [data-about-snap] * { font-family: Montserrat, Pretendard, "Noto Sans KR", sans-serif !important; }
   html body .siteRoot h1, html body .siteRoot h1 *, html body .siteRoot h2, html body .siteRoot h2 *, html body .siteRoot h3, html body .siteRoot h3 *, html body .siteRoot [class] , html body .siteRoot [class] * { font-family: Montserrat, Pretendard, "Noto Sans KR", sans-serif !important; }
 </style>
 <style>
-  @keyframes sunRise { 0% { transform: translateY(105%); opacity: 0; } 25% { opacity: 1; } 100% { transform: translateY(0); opacity: 1; } }
-  @keyframes sunGlow { 0% { opacity: 0; transform: translate(-50%,-30%) scale(0.5); } 60% { opacity: 1; } 100% { opacity: 0.85; transform: translate(-50%,-50%) scale(1); } }
-  @keyframes sunHorizon { 0% { transform: scaleX(0); opacity: 0; } 37% { transform: scaleX(1); opacity: 1; } 75% { transform: scaleX(1); opacity: 1; } 100% { transform: scaleX(1); opacity: 0; } }
 </style>
 <style>
   @media (min-width: 1080px) and (min-height: 700px) { .hmA > section { height: 100vh; overflow: hidden; } }
@@ -452,7 +424,7 @@
 
   <header style="{{ headerShell }}">
     <div style="{{ headerInner }}">
-      <a href="#" data-page="home" onClick="{{ onNav }}" class="hdrMark" style="display: flex; align-items: center; gap: 4px; flex: none; margin-inline-start: -4px; position: relative; top: 3px;">
+      <a href="#" data-page="home" onClick="{{ onNav }}" class="hdrMark" style="{{ hdrMarkStyle }}">
         <span style="position: relative; display: block; flex: none;"><img class="hdrMarkImg" src="images/logo-sd-v-white.png" alt="SD ENERGY" style="{{ hdrLogo }}"><img src="images/logo-sd-v-navy.png" alt="" aria-hidden="true" style="{{ hdrLogoNavy }}"></span>
       </a>
 
@@ -524,10 +496,10 @@
     </section>
 
     <section data-home-snap="1" data-screen-label="02 회사 소개" ref="{{ bgARef }}" style="background: #F8F6EE; color: #0f1a2e; min-height: 100vh; display: flex; align-items: center;">
-      <div style="max-width: none; margin: 0; width: 100%; box-sizing: border-box; padding-left: clamp(20px,11vw,212px); padding-right: clamp(20px,11vw,212px); padding-top: clamp(84px,calc(7 * var(--u)),124px); padding-bottom: clamp(48px,calc(5 * var(--u)),96px); display: flex; flex-wrap: wrap; align-items: flex-start; justify-content: space-between; gap: clamp(40px,5vw,96px);">
+      <div style="max-width: none; margin: 0; width: 100%; box-sizing: border-box; padding-left: clamp(24px,calc(11vw - max(0px,768px - 100vw) * 0.06),212px); padding-right: clamp(24px,calc(11vw - max(0px,768px - 100vw) * 0.06),212px); padding-top: clamp(84px,calc(7 * var(--u)),124px); padding-bottom: clamp(48px,calc(5 * var(--u)),96px); display: flex; flex-wrap: wrap; align-items: flex-start; justify-content: space-between; gap: clamp(40px,5vw,96px);">
         <div class="reveal" style="flex: 1 1 340px; min-width: 0; max-width: 880px; padding-top: clamp(0px,calc(5.5 * var(--u)),100px);">
           <div style="font-size: clamp(1rem,calc(1.65 * var(--u)),1.95rem); font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: #5A7A14;">Our purpose</div>
-          <h2 style="font-size: clamp(3.1rem,calc(6.2 * var(--u)),7.4rem); font-weight: 700; line-height: 1; letter-spacing: -0.015em; color: #0f1a2e; margin: clamp(16px,calc(1.9 * var(--u)),36px) 0 0; text-transform: uppercase; max-width: 6.4em;"><sc-if value="{{ svKo }}" hint-placeholder-val="{{ true }}">지속가능한 에너지를 만듭니다.</sc-if><sc-if value="{{ svEn }}" hint-placeholder-val="{{ false }}"><span style="font-size: 0.95em;">Building sustainable energy.</span></sc-if></h2>
+          <h2 style="font-size: clamp(3.1rem,calc(6.2 * var(--u)),7.4rem); font-weight: 700; line-height: 1; letter-spacing: -0.015em; color: #0f1a2e; margin: clamp(16px,calc(1.9 * var(--u)),36px) 0 0; text-transform: uppercase; max-width: 6.4em;"><sc-if value="{{ svKo }}" hint-placeholder-val="{{ true }}">지속가능한 에너지를 만듭니다.</sc-if><sc-if value="{{ svEn }}" hint-placeholder-val="{{ false }}"><span style="font-size: min(0.95em, 10vw);">Building sustainable energy.</span></sc-if></h2>
           <p style="font-size: clamp(1rem,calc(1.6 * var(--u)),1.9rem); color: #4a5260; line-height: 2; margin: clamp(36px,calc(5.2 * var(--u)),92px) 0 0; text-wrap: pretty;"><sc-if value="{{ svKo }}" hint-placeholder-val="{{ true }}"><span style="display: block;">태양광 개발과 투자를 중심으로 에너지 사업을 추진합니다.</span><span style="display: block;">지역과 장기적인 가치를 공유하는 사업을 지향합니다.</span></sc-if><sc-if value="{{ svEn }}" hint-placeholder-val="{{ false }}">We pursue energy projects centered on solar development and investment, aiming to share <span style="white-space: nowrap;">long-term</span> value with local communities.</sc-if></p>
         </div>
         <div class="reveal" style="flex: 1 1 280px; min-width: 0; max-width: 560px; aspect-ratio: 669 / 748; background-image: url('images/home-about.jpg'); background-size: cover; background-position: center;"></div>
@@ -535,7 +507,7 @@
     </section>
 
     <section data-home-snap="1" data-screen-label="03 사업 소개" ref="{{ bgBRef }}" style="background: #F3F0E3; color: #0f1a2e; min-height: 100vh; display: flex; align-items: center;">
-      <div style="max-width: none; margin: 0; width: 100%; box-sizing: border-box; padding-left: clamp(20px,11vw,212px); padding-right: clamp(20px,11vw,212px); padding-top: clamp(76px,calc(6.5 * var(--u)),120px); padding-bottom: clamp(28px,calc(4 * var(--u)),80px);">
+      <div style="max-width: none; margin: 0; width: 100%; box-sizing: border-box; padding-left: clamp(24px,calc(11vw - max(0px,768px - 100vw) * 0.06),212px); padding-right: clamp(24px,calc(11vw - max(0px,768px - 100vw) * 0.06),212px); padding-top: clamp(76px,calc(6.5 * var(--u)),120px); padding-bottom: clamp(28px,calc(4 * var(--u)),80px);">
         <div class="reveal">
           <div style="font-size: clamp(0.9rem,calc(1.2 * var(--u)),1.45rem); font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: #5A7A14;">What we do</div>
           <h2 style="font-size: clamp(2rem,calc(3.5 * var(--u)),4.2rem); font-weight: 700; line-height: 1.12; letter-spacing: -0.01em; color: #0f1a2e; text-transform: uppercase; margin: clamp(16px,calc(1.6 * var(--u)),26px) 0 0;"><sc-if value="{{ svKo }}" hint-placeholder-val="{{ true }}">사업 기회에서 발전 자산까지, 태양광 사업을 완성합니다.</sc-if><sc-if value="{{ svEn }}" hint-placeholder-val="{{ false }}">Solar projects, built from opportunity to asset.</sc-if></h2>
@@ -586,13 +558,13 @@
     </section>
 
     <section data-home-snap="1" data-screen-label="04 사업 규모" ref="{{ bgCRef }}" style="background: #F8F6EE; color: #0f1a2e; min-height: 100vh; display: flex; align-items: center;">
-      <div style="max-width: none; margin: 0; width: 100%; box-sizing: border-box; padding-left: clamp(20px,11vw,212px); padding-right: clamp(20px,11vw,212px); padding-top: clamp(84px,calc(7 * var(--u)),124px); padding-bottom: clamp(48px,calc(5 * var(--u)),96px);">
+      <div style="max-width: none; margin: 0; width: 100%; box-sizing: border-box; padding-left: clamp(24px,calc(11vw - max(0px,768px - 100vw) * 0.06),212px); padding-right: clamp(24px,calc(11vw - max(0px,768px - 100vw) * 0.06),212px); padding-top: clamp(84px,calc(7 * var(--u)),124px); padding-bottom: clamp(48px,calc(5 * var(--u)),96px);">
         <div class="reveal">
           <div style="font-size: clamp(0.9rem,calc(1.2 * var(--u)),1.45rem); font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: #5A7A14;">Our projects</div>
           <h2 style="font-size: clamp(2rem,calc(3.4 * var(--u)),4rem); font-weight: 700; line-height: 1.12; letter-spacing: -0.01em; color: #0f1a2e; margin: clamp(10px,calc(1 * var(--u)),18px) 0 0; text-transform: uppercase;"><sc-if value="{{ svKo }}" hint-placeholder-val="{{ true }}">진행 중인 프로젝트</sc-if><sc-if value="{{ svEn }}" hint-placeholder-val="{{ false }}">Projects in progress.</sc-if></h2>
         </div>
         <div style="margin-top: clamp(48px,calc(4.2 * var(--u)),80px); display: flex; flex-wrap: wrap; gap: clamp(32px,3.4vw,64px);">
-          <div class="reveal" style="flex: 1.85 1 520px; max-width: max(calc(58 * var(--u)), calc((840px + clamp(32px,calc(3.4 * var(--u)),64px) - 100%) * 1000)); aspect-ratio: 1036 / 533; background-image: url('images/home-projects-3.jpg'); background-size: cover; background-position: center;"></div>
+          <div class="reveal" style="flex: 1.85 1 520px; max-width: max(calc(58 * var(--u)), calc((840px + clamp(32px,calc(3.4 * var(--u)),64px) - 100%) * 1000)); aspect-ratio: 1036 / 533; background-image: url('images/home-projects-4.jpg'); background-size: cover; background-position: center;"></div>
           <div class="reveal" style="flex: 1 1 320px; display: flex; flex-direction: column; padding-left: clamp(0px, calc((100vw - 900px) * 1000), clamp(16px,calc(2.4 * var(--u)),48px));">
             <div style="display: flex; align-items: baseline; gap: clamp(10px,1.1vw,20px); color: #0f1a2e; font-weight: 700; line-height: 0.95;"><span style="font-size: clamp(4.6rem,calc(8.6 * var(--u)),10.4rem); letter-spacing: -0.02em;">600</span><span style="font-size: clamp(2rem,calc(3.4 * var(--u)),4rem);">MW</span></div>
             <p style="font-size: clamp(1rem,calc(1.4 * var(--u)),1.65rem); color: #4a5260; line-height: 1.5; margin: clamp(14px,calc(1.4 * var(--u)),26px) 0 0; text-wrap: pretty;"><sc-if value="{{ svKo }}" hint-placeholder-val="{{ true }}">약 600MW 규모의 에너지 사업을 개발하고 있습니다.</sc-if><sc-if value="{{ svEn }}" hint-placeholder-val="{{ false }}">We are developing energy projects totaling about 600 MW.</sc-if></p>
@@ -606,7 +578,7 @@
     </section>
 
     <section data-home-snap="1" data-screen-label="05 해외 거점" style="background: #131a24; color: #fff; min-height: 100vh; display: flex; align-items: center;">
-      <div style="max-width: none; margin: 0; width: 100%; box-sizing: border-box; box-sizing: border-box; padding-left: clamp(20px,11vw,212px); padding-right: clamp(20px,11vw,212px); padding-top: clamp(80px,calc(9 * var(--u)),160px); padding-bottom: clamp(80px,calc(9 * var(--u)),160px); display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: clamp(48px,5vw,96px);">
+      <div style="max-width: none; margin: 0; width: 100%; box-sizing: border-box; box-sizing: border-box; padding-left: clamp(24px,calc(11vw - max(0px,768px - 100vw) * 0.06),212px); padding-right: clamp(24px,calc(11vw - max(0px,768px - 100vw) * 0.06),212px); padding-top: clamp(80px,calc(9 * var(--u)),160px); padding-bottom: clamp(80px,calc(9 * var(--u)),160px); display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: clamp(48px,5vw,96px);">
         <div class="reveal" style="flex: 1 1 320px; max-width: 760px;">
           <div style="font-size: clamp(0.9rem,calc(1.2 * var(--u)),1.45rem); font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: #b5cb3b;">Our presence</div>
           <h2 style="font-size: clamp(3rem,calc(6.2 * var(--u)),7.4rem); font-weight: 700; line-height: 0.98; letter-spacing: -0.01em; color: #fff; margin: clamp(20px,calc(2.2 * var(--u)),40px) 0 0;">KOREA<br>JAPAN</h2>
@@ -616,7 +588,7 @@
         <div class="reveal" style="flex: 1.3 1 340px; max-width: min(1000px, calc((100vh - 120px) * 1.32)); position: relative; aspect-ratio: 792 / 600; border: 1px solid #2b3442; border-radius: 16px; background: #0f151d; overflow: hidden;">
           <div style="position: absolute; left: 13.9%; top: 16.7%; width: 37.9%; height: 50%; border: 1px solid #2b3442; border-radius: 50%;"></div>
           <div style="position: absolute; left: 56.8%; top: 45%; width: 27.8%; height: 36.7%; border: 1px solid #2b3442; border-radius: 50%;"></div>
-          <svg viewBox="0 0 792 600" style="position: absolute; inset: 0; width: 100%; height: 100%;" fill="none"><defs><filter id="geoArcSoft" x="-10%" y="-10%" width="120%" height="120%"><feGaussianBlur stdDeviation="7"></feGaussianBlur></filter><mask id="geoArcMask" maskUnits="userSpaceOnUse" x="0" y="0" width="792" height="600"><path class="geoArcDraw" d="M 280 240 C 360 196, 480 214, 552 366" stroke="#fff" stroke-width="18" stroke-linecap="round" fill="none" pathLength="1" stroke-dasharray="1 1" filter="url(#geoArcSoft)"></path></mask></defs><path d="M 280 240 C 360 196, 480 214, 552 366" stroke="rgba(255,255,255,0.92)" stroke-width="2.6" stroke-linecap="round" stroke-dasharray="7 9" mask="url(#geoArcMask)"></path></svg>
+          <svg viewBox="0 0 792 600" style="position: absolute; inset: 0; width: 100%; height: 100%;" fill="none"><path class="geoArcFlow" d="M 280 240 C 360 196, 480 214, 552 366" stroke="rgba(255,255,255,0.92)" stroke-width="2.6" stroke-linecap="round" stroke-dasharray="7 9"></path></svg>
           <div class="geoDot" style="animation-delay: 0s; position: absolute; left: 32.7%; top: 41.7%; width: 7%; aspect-ratio: 1; transform: translate(-50%,-50%); border-radius: 50%; background: rgba(181,203,59,0.2); display: flex; align-items: center; justify-content: center;"><span style="width: 40%; aspect-ratio: 1; border-radius: 50%; background: #b5cb3b;"></span></div>
           <div class="geoDot" style="animation-delay: 1.15s; position: absolute; left: 70.7%; top: 63.3%; width: 7%; aspect-ratio: 1; transform: translate(-50%,-50%); border-radius: 50%; background: rgba(181,203,59,0.2); display: flex; align-items: center; justify-content: center;"><span style="width: 40%; aspect-ratio: 1; border-radius: 50%; background: #b5cb3b;"></span></div>
           <span style="position: absolute; left: 28.6%; top: 33%; transform: translate(-50%,-50%); font-size: clamp(0.9rem,calc(1.4 * var(--u)),1.6rem); font-weight: 700; letter-spacing: 0.1em; color: #fff;">SEOUL</span>
@@ -646,8 +618,8 @@
 
 
     </section>
-    <section style="background: #fff; padding: 80px clamp(20px,4vw,40px) 60px;">
-      <div class="mapSplit r-2" style="max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 36px; align-items: stretch;">
+    <section data-board-snap="1" style="background: #fff; min-height: 100vh; box-sizing: border-box; display: flex; flex-direction: column; justify-content: center; padding: calc(78px + 32px) clamp(20px,4vw,40px) 40px;">
+      <div class="mapSplit r-2" style="width: 100%; max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 36px; align-items: stretch;">
 
         <div style="border: 1px solid #e4e8ef; border-radius: 16px; background: #fff; padding: 22px; position: relative;">
           <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 18px; gap: 16px;">
@@ -986,10 +958,10 @@
     <sc-if value="{{ isBizDev }}" hint-placeholder-val="{{ false }}">
 
     <!-- 태양광 발전사업의 가치 -->
-    <section data-board-snap="dev1" style="background: #ffffff; min-height: 100vh; box-sizing: border-box; display: flex; flex-direction: column; justify-content: center; padding: clamp(96px,9vw,240px) 5.1vw clamp(80px,7vw,190px);">
+    <section data-board-snap="dev1" style="background: #ffffff; min-height: 100vh; box-sizing: border-box; display: flex; flex-direction: column; justify-content: center; padding: clamp(56px,5vw,140px) 5.1vw clamp(80px,7vw,190px);">
       <div style="width: 100%; max-width: 86%; margin: 0 auto;">
         <div style="--u: min(1vw, 1.65vh); font-size: clamp(0.9rem,calc(1.2 * var(--u)),1.45rem); font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: #5A7A14;">Solar energy</div>
-        <sc-if value="{{ svEn }}" hint-placeholder-val="{{ false }}"><h2 style="font-size: clamp(2rem,3.6vw,5.8rem); font-weight: 750; letter-spacing: -0.025em; line-height: 1.05; color: #0f1a2e; margin: clamp(10px,0.9vw,24px) 0 clamp(28px,3.2vw,84px);">Solar, in perspective.</h2></sc-if>
+        <sc-if value="{{ svEn }}" hint-placeholder-val="{{ false }}"><h2 style="font-size: clamp(1.9rem,3.3vw,5.3rem); font-weight: 750; letter-spacing: -0.03em; line-height: 1.15; color: #0f1a2e; margin: clamp(10px,0.9vw,24px) 0 clamp(28px,3.2vw,84px);">Solar, in perspective.</h2></sc-if>
         <sc-if value="{{ svKo }}" hint-placeholder-val="{{ true }}"><h2 style="font-size: clamp(1.9rem,3.3vw,5.3rem); font-weight: 750; letter-spacing: -0.03em; line-height: 1.15; color: #0f1a2e; margin: clamp(10px,0.9vw,24px) 0 clamp(28px,3.2vw,84px);">태양광 발전사업의 가치</h2></sc-if>
         <div class="svGrid" style="display: grid; grid-template-columns: minmax(0,50.4fr) minmax(0,34fr); align-items: center; gap: clamp(32px,5vw,170px);">
           <div class="reveal" style="aspect-ratio: 842 / 593; background-image: url('images/bizdev-solar-perspective.jpg'); background-size: cover; background-position: center;"></div>
@@ -1016,7 +988,7 @@
       <div class="svGrid" style="width: 100%; display: grid; grid-template-columns: minmax(0,40fr) minmax(0,46fr); gap: clamp(32px,8.8vw,240px); align-items: start;">
         <div class="reveal rv-u">
           <div style="--u: min(1vw, 1.65vh); font-size: clamp(0.9rem,calc(1.2 * var(--u)),1.45rem); font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: #5A7A14;">RE100</div>
-          <h2 style="font-size: clamp(1.8rem,3.1vw,5rem); font-weight: 750; letter-spacing: -0.03em; line-height: 1.32; color: #0f1a2e; margin: clamp(14px,1.3vw,32px) 0 0; text-wrap: balance;"><sc-if value="{{ svKo }}" hint-placeholder-val="{{ true }}">기업의 재생에너지 전환을 함께 설계합니다</sc-if><sc-if value="{{ svEn }}" hint-placeholder-val="{{ false }}">Designing the shift to renewable energy together</sc-if></h2>
+          <h2 style="font-size: clamp(1.9rem,3.3vw,5.3rem); font-weight: 750; letter-spacing: -0.03em; line-height: 1.32; color: #0f1a2e; margin: clamp(14px,1.3vw,32px) 0 0; text-wrap: balance;"><sc-if value="{{ svKo }}" hint-placeholder-val="{{ true }}">기업의 재생에너지 전환을 함께 설계합니다</sc-if><sc-if value="{{ svEn }}" hint-placeholder-val="{{ false }}">Designing the shift to renewable energy together</sc-if></h2>
           <p style="font-size: clamp(0.92rem,1.2vw,1.9rem); color: #4a5260; line-height: 1.95; margin: clamp(24px,3vw,72px) 0 0; text-wrap: pretty;"><sc-if value="{{ svKo }}" hint-placeholder-val="{{ true }}">RE100은 기업이 사용하는 전력을 재생에너지로 전환하는 것을 목표로 하는 글로벌 캠페인입니다. 국내에서는 K-RE100 제도를 통해 재생에너지 사용실적을 인정받고 「재생에너지 사용 확인서」를 발급받을 수 있습니다.</sc-if><sc-if value="{{ svEn }}" hint-placeholder-val="{{ false }}">RE100 is a global campaign for companies to switch the electricity they use to renewable energy. <span style="white-space: nowrap;">In Korea, the K-RE100</span> program certifies renewable energy use and issues a Renewable Energy Use Certificate.</sc-if></p>
         </div>
         <div data-relist="" style="border-top: 1px solid #dfe2e6;">
@@ -1056,7 +1028,7 @@
     <section data-board-snap="dev4" style="background: #fff; min-height: 100vh; box-sizing: border-box; display: flex; flex-direction: column; justify-content: center; border-top: 1px solid #e3e9f3; padding: clamp(64px,7.5vw,200px) 5.6vw clamp(64px,7.5vw,200px);">
       <div style="width: 100%;">
         <div style="--u: min(1vw, 1.65vh); font-size: clamp(0.9rem,calc(1.2 * var(--u)),1.45rem); font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: #5A7A14;">Process</div>
-        <h2 style="font-size: clamp(2.2rem,4vw,6.4rem); font-weight: 750; letter-spacing: -0.03em; line-height: 1.15; color: #0f1a2e; margin: clamp(10px,0.9vw,24px) 0 clamp(40px,5vw,132px);"><sc-if value="{{ svKo }}" hint-placeholder-val="{{ true }}">태양광 발전사업 프로세스</sc-if><sc-if value="{{ svEn }}" hint-placeholder-val="{{ false }}">Solar power project process</sc-if></h2>
+        <h2 style="font-size: clamp(1.9rem,3.3vw,5.3rem); font-weight: 750; letter-spacing: -0.03em; line-height: 1.15; color: #0f1a2e; margin: clamp(10px,0.9vw,24px) 0 clamp(64px,7vw,172px);"><sc-if value="{{ svKo }}" hint-placeholder-val="{{ true }}">태양광 발전사업 프로세스</sc-if><sc-if value="{{ svEn }}" hint-placeholder-val="{{ false }}">Solar power project process</sc-if></h2>
         <div class="procGrid devProc" style="--pr: clamp(44px,4.6vw,110px); --pd: clamp(30px,2.2vw,52px); --rh: clamp(170px,11.5vw,290px); box-sizing: border-box; max-width: 90%; margin: 0 auto; padding: 0 var(--pr); display: grid; grid-template-columns: minmax(0,1fr); grid-auto-rows: 1fr;">
           <sc-for list="{{ procRows }}" as="pr" hint-placeholder-count="3">
             <div style="position: relative; min-height: var(--rh); padding-bottom: clamp(36px,3vw,72px); box-sizing: border-box; display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); align-items: start;">
@@ -1206,7 +1178,7 @@
               <svg viewBox="0 0 24 24" style="width: 20px; height: 20px; fill: none; stroke: #A9BC5C; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round;"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2"></path><path d="M12 20v2"></path><path d="m4.93 4.93 1.41 1.41"></path><path d="m17.66 17.66 1.41 1.41"></path><path d="M2 12h2"></path><path d="M20 12h2"></path><path d="m6.34 17.66-1.41 1.41"></path><path d="m19.07 4.93-1.41 1.41"></path></svg>
             </div>
           </div>
-          <div style="position: relative; background: #FBFAF7; border: 1px solid #E4E0D6; border-radius: 14px; padding: clamp(20px,2.6vh,28px) clamp(20px,1.9vw,30px) clamp(22px,3vh,32px); display: flex; flex-direction: column; justify-content: space-between; gap: clamp(28px,5vh,56px); min-width: 0;">
+          <div style="position: relative; background: #FBFAF7; border: 1px solid #E4E0D6; border-radius: 14px; padding: clamp(20px,2.6vh,28px) clamp(20px,1.9vw,30px) clamp(22px,3vh,32px); display: flex; flex-direction: column; justify-content: flex-start; gap: clamp(16px,2.6vh,30px); min-width: 0; overflow: hidden;">
             <div style="display: flex; justify-content: space-between; align-items: flex-start;">
               <span style="width: clamp(40px,3.1vw,50px); height: clamp(40px,3.1vw,50px); border-radius: 50%; background: #ECE7DC; display: flex; align-items: center; justify-content: center;"><svg viewBox="0 0 24 24" style="width: 46%; height: 46%; fill: none; stroke: #2B2F36; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round;"><path d="m11 17 2 2a1 1 0 1 0 3-3"></path><path d="m14 14 2.5 2.5a1 1 0 1 0 3-3l-3.88-3.88a3 3 0 0 0-4.24 0l-.88.88a1 1 0 1 1-3-3l2.81-2.8a5.79 5.79 0 0 1 7.06-.87l.47.28a2 2 0 0 0 1.42.25L21 4"></path><path d="m21 3 1 11h-2"></path><path d="M3 3 2 14l6.5 6.5a1 1 0 1 0 3-3"></path><path d="M3 4h8"></path></svg></span>
             </div>
@@ -1215,7 +1187,7 @@
               <span style="font-size: clamp(13px,0.95vw,16px); color: #5B616B; line-height: 1.5; letter-spacing: -0.01em; word-break: keep-all;">{{ abArea2D }}</span>
             </div>
           </div>
-          <div style="position: relative; background: #FBFAF7; border: 1px solid #E4E0D6; border-radius: 14px; padding: clamp(20px,2.6vh,28px) clamp(20px,1.9vw,30px) clamp(22px,3vh,32px); display: flex; flex-direction: column; justify-content: space-between; gap: clamp(28px,5vh,56px); min-width: 0;">
+          <div style="position: relative; background: #FBFAF7; border: 1px solid #E4E0D6; border-radius: 14px; padding: clamp(20px,2.6vh,28px) clamp(20px,1.9vw,30px) clamp(22px,3vh,32px); display: flex; flex-direction: column; justify-content: flex-start; gap: clamp(16px,2.6vh,30px); min-width: 0; overflow: hidden;">
             <div style="display: flex; justify-content: space-between; align-items: flex-start;">
               <span style="width: clamp(40px,3.1vw,50px); height: clamp(40px,3.1vw,50px); border-radius: 50%; background: #ECE7DC; display: flex; align-items: center; justify-content: center;"><svg viewBox="0 0 24 24" style="width: 46%; height: 46%; fill: none; stroke: #2B2F36; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round;"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"></path><path d="M14 2v4a2 2 0 0 0 2 2h4"></path><path d="M10 9H8"></path><path d="M16 13H8"></path><path d="M16 17H8"></path></svg></span>
             </div>
@@ -1224,7 +1196,7 @@
               <span style="font-size: clamp(13px,0.95vw,16px); color: #5B616B; line-height: 1.5; letter-spacing: -0.01em; word-break: keep-all;">{{ abArea3D }}</span>
             </div>
           </div>
-          <div style="position: relative; background: #FBFAF7; border: 1px solid #E4E0D6; border-radius: 14px; padding: clamp(20px,2.6vh,28px) clamp(20px,1.9vw,30px) clamp(22px,3vh,32px); display: flex; flex-direction: column; justify-content: space-between; gap: clamp(28px,5vh,56px); min-width: 0;">
+          <div style="position: relative; background: #FBFAF7; border: 1px solid #E4E0D6; border-radius: 14px; padding: clamp(20px,2.6vh,28px) clamp(20px,1.9vw,30px) clamp(22px,3vh,32px); display: flex; flex-direction: column; justify-content: flex-start; gap: clamp(16px,2.6vh,30px); min-width: 0; overflow: hidden;">
             <div style="display: flex; justify-content: space-between; align-items: flex-start;">
               <span style="width: clamp(40px,3.1vw,50px); height: clamp(40px,3.1vw,50px); border-radius: 50%; background: #ECE7DC; display: flex; align-items: center; justify-content: center;"><svg viewBox="0 0 24 24" style="width: 46%; height: 46%; fill: none; stroke: #2B2F36; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round;"><path d="M8 3 4 7l4 4"></path><path d="M4 7h16"></path><path d="m16 21 4-4-4-4"></path><path d="M20 17H4"></path></svg></span>
             </div>
@@ -1233,7 +1205,7 @@
               <span style="font-size: clamp(13px,0.95vw,16px); color: #5B616B; line-height: 1.5; letter-spacing: -0.01em; word-break: keep-all;">{{ abArea4D }}</span>
             </div>
           </div>
-          <div style="position: relative; background: #FBFAF7; border: 1px solid #E4E0D6; border-radius: 14px; padding: clamp(20px,2.6vh,28px) clamp(20px,1.9vw,30px) clamp(22px,3vh,32px); display: flex; flex-direction: column; justify-content: space-between; gap: clamp(28px,5vh,56px); min-width: 0;">
+          <div style="position: relative; background: #FBFAF7; border: 1px solid #E4E0D6; border-radius: 14px; padding: clamp(20px,2.6vh,28px) clamp(20px,1.9vw,30px) clamp(22px,3vh,32px); display: flex; flex-direction: column; justify-content: flex-start; gap: clamp(16px,2.6vh,30px); min-width: 0; overflow: hidden;">
             <div style="display: flex; justify-content: space-between; align-items: flex-start;">
               <span style="width: clamp(40px,3.1vw,50px); height: clamp(40px,3.1vw,50px); border-radius: 50%; background: #ECE7DC; display: flex; align-items: center; justify-content: center;"><svg viewBox="0 0 24 24" style="width: 46%; height: 46%; fill: none; stroke: #2B2F36; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round;"><rect x="4" y="2" width="16" height="20" rx="2"></rect><path d="M9 22v-4h6v4"></path><path d="M8 6h.01"></path><path d="M16 6h.01"></path><path d="M12 6h.01"></path><path d="M12 10h.01"></path><path d="M12 14h.01"></path><path d="M16 10h.01"></path><path d="M16 14h.01"></path><path d="M8 10h.01"></path><path d="M8 14h.01"></path></svg></span>
             </div>
@@ -1657,12 +1629,12 @@
   <footer style="background: {{ footerBg }}; color: #cdd7cd;">
     <div style="max-width: 1320px; margin: 0 auto; padding: clamp(32px,4.5vw,44px) clamp(20px,5vw,32px) 40px;">
       <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-start; gap: 28px;">
-        <div class="reveal rv-u" style="max-width: 400px; position: relative; top: 68px;">
+        <div class="reveal rv-u" style="max-width: 400px; position: relative; top: clamp(0px, calc(100vw - 900px), 68px);">
           <div style="display: flex; align-items: center; gap: 12px;"><img src="images/logo-sd-v-white.png" alt="SD ENERGY" style="height: 64px; width: auto; display: block;"></div>
           <p style="margin: 16px 0 0; font-size: 0.9rem; color: rgba(205,215,205,0.62); line-height: 1.7; text-wrap: pretty; width: min(426px, calc(100vw - 40px)); min-height: 3.4em;">{{ footerTag }}</p>
           <div style="margin-top: 10px; font-size: 0.8rem; font-weight: 600; color: rgba(205,215,205,0.8); line-height: 1.7;">{{ companyName }}</div>
         </div>
-        <nav class="reveal rv-u" style="display: flex; flex-wrap: wrap; gap: 10px 40px; align-items: flex-start; position: relative; z-index: 5;">
+        <nav class="reveal rv-u" style="display: flex; flex-wrap: wrap; gap: 10px clamp(18px, 4vw, 40px); align-items: flex-start; position: relative; z-index: 5;">
           <sc-for list="{{ footGroups }}" as="fg" hint-placeholder-count="4">
             <div onMouseEnter="{{ fg.enter }}" onMouseLeave="{{ fg.leave }}" style="position: relative;">
               <a href="#" data-page="{{ fg.page }}" onClick="{{ onNav }}" style="{{ fg.labelStyle }}">{{ fg.label }}</a>
@@ -2114,7 +2086,7 @@
     <img loading="lazy" style="width:2px;height:2px;object-fit:cover;" data-asset="images/logo-sd-mark.png" src="images/logo-sd-mark.png" alt="">
     <img loading="lazy" style="width:2px;height:2px;object-fit:cover;" data-asset="images/main-hero-original-poster.jpg" src="images/main-hero-original-poster.jpg" alt="">
     <img loading="lazy" style="width:2px;height:2px;object-fit:cover;" data-asset="images/home-about.jpg" src="images/home-about.jpg" alt="">
-    <img loading="lazy" style="width:2px;height:2px;object-fit:cover;" data-asset="images/home-projects-3.jpg" src="images/home-projects-3.jpg" alt="">
+    <img loading="lazy" style="width:2px;height:2px;object-fit:cover;" data-asset="images/home-projects-4.jpg" src="images/home-projects-4.jpg" alt="">
     <img loading="lazy" style="width:2px;height:2px;object-fit:cover;" data-asset="images/bizdev-solar-perspective.jpg" src="images/bizdev-solar-perspective.jpg" alt="">
     <img loading="lazy" style="width:2px;height:2px;object-fit:cover;" data-asset="images/about-hero-photo-v2.jpg" src="images/about-hero-photo-v2.jpg" alt="">
     <img loading="lazy" style="width:2px;height:2px;object-fit:cover;" data-asset="images/history-bg-rooftop.jpg" src="images/history-bg-rooftop.jpg" alt="">
@@ -2522,6 +2494,9 @@ class Component extends DCLogic {
         const p = Math.min(1, (now - t0) / dur);
         const k = p < 0.5 ? 4 * p * p * p : 1 - Math.pow(-2 * p + 2, 3) / 2;
         if (p >= 1) this._snapEndT = now;
+        // layout shifts once we leave the top (header state) — follow the live stop so the landing never jumps back
+        const sl = this._aboutStops && this._aboutStops();
+        if (sl) { let bd0 = 120; sl.forEach((v) => { const d = Math.abs(v - to); if (d < bd0) { bd0 = d; to = v; } }); }
         window.scrollTo(0, Math.round(from + (to - from) * k));
         if (p < 1) { this._snapRaf = requestAnimationFrame(step); }
         else {
@@ -4709,6 +4684,7 @@ class Component extends DCLogic {
       langBoxStyle: { display: "inline-flex", alignItems: "center", gap: "10px", fontSize: "14.5px" },
       navBtnStyle: { width: Math.round(38 - 4 * npv) + "px", height: Math.round(38 - 4 * npv) + "px", border: "none", background: "transparent", borderRadius: (10 - 1 * npv).toFixed(1) + "px", cursor: "pointer", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: 5, flexShrink: 0, transition: "background .45s ease, border-color .45s ease" },
       navLineStyle: { width: Math.round(17 - 2 * npv) + "px", height: "2px", flex: "none", borderRadius: "1px", background: this.navMix([255, 255, 255], [22, 41, 74]), display: "block" },
+      hdrMarkStyle: { display: "flex", alignItems: "center", gap: "4px", flex: "none", marginInlineStart: "-4px", position: "relative", top: (3 - 3 * npv).toFixed(1) + "px" },
       hdrLogo: { height: (46 - 6 * npv).toFixed(1) + "px", width: "auto", display: "block", flexShrink: 0, opacity: (1 - (st.navDark ? 0 : this.navT())).toFixed(3) },
       hdrLogoNavy: { position: "absolute", left: 0, top: 0, height: (46 - 6 * npv).toFixed(1) + "px", width: "auto", display: "block", opacity: (st.navDark ? 0 : this.navT()).toFixed(3), pointerEvents: "none" },
       headerShell: (() => {
