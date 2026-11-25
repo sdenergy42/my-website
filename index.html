@@ -91,10 +91,10 @@
     main { height: auto !important; }
   }
   @media (max-width: 760px) { .heroSideShade { background: linear-gradient(180deg, rgba(18,26,38,0.8) 0%, rgba(18,26,38,0.74) 42%, rgba(18,26,38,0.5) 62%, rgba(18,26,38,0.18) 82%, rgba(18,26,38,0.08) 100%) !important; } video[data-hero-vid] { object-position: 75% 50% !important; } }
+  @media (max-width: 760px) { .dirGrid { grid-template-columns: minmax(0,1fr) !important; gap: 24px !important; } }
   @media (max-width: 999px) {
-    .topBtn { right: 0 !important; bottom: calc(14px + env(safe-area-inset-bottom)) !important; width: 44px !important; height: 44px !important; border-radius: 0 !important; background: transparent !important; box-shadow: none !important; transform: none !important; justify-content: flex-end !important; padding: 0 3px 0 0 !important; }
-    .topBtn::before { content: ""; position: absolute; right: 0; top: 0; bottom: 0; width: 18px; background: #1F3A5F; border-radius: 9px 0 0 9px; box-shadow: 0 6px 16px rgba(20,40,74,0.28); }
-    .topBtn svg { position: relative; width: 12px !important; height: 12px !important; }
+    .topBtn { width: 44px !important; height: 44px !important; border-radius: 50% !important; background: transparent !important; border: 2px solid #ffffff !important; color: #ffffff !important; mix-blend-mode: difference; box-shadow: none !important; transform: none !important; }
+    .topBtn svg { width: 18px !important; height: 18px !important; }
   }
   .hbTr { transition: transform 0.45s cubic-bezier(0.6,0,0.2,1); }
   a:hover .hbTr { transform: translateX(50%); }
@@ -506,7 +506,7 @@
           <p style="font-size: clamp(1rem,calc(1.6 * var(--u)),1.9rem); color: #4a5260; line-height: 2; margin: clamp(36px,calc(5.2 * var(--u)),92px) 0 0; text-wrap: pretty;"><span style="display: block;">태양광 개발과 투자를 중심으로 에너지 사업을 추진합니다.</span><span style="display: block;">지역과 장기적인 가치를 공유하는 사업을 지향합니다.</span></p></div><div style="grid-area: 1 / 1; visibility: {{ purposeEnVis }};"><h2 style="font-size: clamp(3.1rem,calc(6.2 * var(--u)),7.4rem); font-weight: 700; line-height: 1; letter-spacing: -0.015em; color: #0f1a2e; margin: clamp(16px,calc(1.9 * var(--u)),36px) 0 0; text-transform: uppercase; max-width: 6.4em;"><span style="font-size: min(0.95em, 10vw);">Building sustainable energy.</span></h2>
           <p style="font-size: clamp(1rem,calc(1.6 * var(--u)),1.9rem); color: #4a5260; line-height: 2; margin: clamp(36px,calc(5.2 * var(--u)),92px) 0 0; text-wrap: pretty;">We pursue energy projects centered on solar development and investment, aiming to share <span style="white-space: nowrap;">long-term</span> value with local communities.</p></div></div>
         </div>
-        <div class="reveal" style="flex: 1 1 280px; min-width: 0; max-width: 560px; margin-top: clamp(0px,calc(4 * var(--u)),72px); aspect-ratio: 669 / 748; background-image: url('images/home-about-bulb-v5.webp'); background-size: cover; background-position: center;" role="img" aria-label="{{ altHomeAbout }}"></div>
+        <div class="reveal" style="flex: 1 1 280px; min-width: 0; max-width: 560px; margin-top: clamp(0px,calc(4 * var(--u)),72px); aspect-ratio: 669 / 748; position: relative; overflow: hidden;"><img src="images/home-about-bulb-v5.webp" alt="{{ altHomeAbout }}" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; display: block;"></div>
       </div>
     </section>
 
@@ -568,7 +568,7 @@
           <h2 style="font-size: clamp(2rem,calc(3.4 * var(--u)),4rem); font-weight: 700; line-height: 1.12; letter-spacing: -0.01em; color: #0f1a2e; margin: clamp(10px,calc(1 * var(--u)),18px) 0 0; text-transform: uppercase;"><sc-if value="{{ svKo }}" hint-placeholder-val="{{ true }}">진행 중인 프로젝트</sc-if><sc-if value="{{ svEn }}" hint-placeholder-val="{{ false }}">Projects in progress.</sc-if></h2>
         </div>
         <div style="margin-top: clamp(48px,calc(4.2 * var(--u)),80px); display: flex; flex-wrap: wrap; gap: clamp(32px,3.4vw,64px);">
-          <div class="reveal" style="flex: 1.85 1 520px; max-width: max(calc(58 * var(--u)), calc((840px + clamp(32px,calc(3.4 * var(--u)),64px) - 100%) * 1000)); aspect-ratio: 1036 / 533; background-image: url('images/home-projects-4.webp'); background-size: cover; background-position: center;" role="img" aria-label="{{ altHomeProjects }}"></div>
+          <div class="reveal" style="flex: 1.85 1 520px; max-width: max(calc(58 * var(--u)), calc((840px + clamp(32px,calc(3.4 * var(--u)),64px) - 100%) * 1000)); aspect-ratio: 1036 / 533; position: relative; overflow: hidden;"><img src="images/home-projects-4.webp" alt="{{ altHomeProjects }}" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; display: block;"></div>
           <div class="reveal" style="flex: 1 1 320px; display: flex; flex-direction: column; padding-left: clamp(0px, calc((100vw - 900px) * 1000), clamp(16px,calc(2.4 * var(--u)),48px));">
             <div style="display: flex; align-items: baseline; gap: clamp(10px,1.1vw,20px); color: #0f1a2e; font-weight: 700; line-height: 0.95;"><span style="font-size: clamp(4.6rem,calc(8.6 * var(--u)),10.4rem); letter-spacing: -0.02em;">600</span><span style="font-size: clamp(2rem,calc(3.4 * var(--u)),4rem);">MW</span></div>
             <p style="font-size: clamp(1rem,calc(1.4 * var(--u)),1.65rem); color: #4a5260; line-height: 1.5; margin: clamp(14px,calc(1.4 * var(--u)),26px) 0 0; text-wrap: pretty;"><sc-if value="{{ svKo }}" hint-placeholder-val="{{ true }}">약 600MW 규모의 에너지 사업을 개발하고 있습니다.</sc-if><sc-if value="{{ svEn }}" hint-placeholder-val="{{ false }}">We are developing energy projects totaling about 600 MW.</sc-if></p>
@@ -684,7 +684,7 @@
             <div style="flex: 1; display: flex; flex-direction: column; border: 1px solid #DCE1EA; border-radius: 16px; overflow: hidden; background: #fff; box-shadow: 0 14px 34px rgba(13,27,48,0.1);">
               <div style="{{ mapPhotoBoxStyle }}">
                 <sc-for list="{{ photoLayers }}" as="pl" hint-placeholder-count="0">
-                  <div key="{{ pl.key }}" role="{{ pl.role }}" aria-label="{{ pl.alt }}" aria-hidden="{{ pl.hidden }}" style="{{ pl.style }}"></div>
+                  <img key="{{ pl.key }}" ref="{{ pl.ref }}" alt="{{ pl.alt }}" aria-hidden="{{ pl.hidden }}" style="{{ pl.style }}">
                 </sc-for>
                 <sc-if value="{{ mapNoPhoto }}" hint-placeholder-val="{{ true }}"><span style="position: absolute; left: 12px; bottom: 12px; font-size: 11px; color: rgba(255,255,255,0.5);">발전소 사진 영역</span></sc-if>
                 <sc-if value="{{ mapBuilding }}" hint-placeholder-val="{{ false }}">
@@ -886,7 +886,7 @@
               <sc-if value="{{ oc.keep }}" hint-placeholder-val="{{ true }}">
                 <div class="epcCard omPhoto" style="grid-column: 3; grid-row: 1; width: 100%; max-width: 440px; justify-self: start;">
                   <div class="epcBox" style="position: relative; border-radius: 14px; overflow: hidden; background: #0F1A2E; aspect-ratio: 4 / 3; box-shadow: 0 6px 18px rgba(14,28,52,0.1);">
-                    <sc-if value="{{ oc.hasImg }}" hint-placeholder-val="{{ false }}"><div class="epcImg" role="img" aria-label="{{ oc.title }}" style="{{ oc.imgStyle }}"></div></sc-if>
+                    <sc-if value="{{ oc.hasImg }}" hint-placeholder-val="{{ false }}"><img class="epcImg" ref="{{ oc.imgRef }}" alt="{{ oc.title }}" style="{{ oc.imgStyle }}"></sc-if>
                     <sc-if value="{{ oc.noImg }}" hint-placeholder-val="{{ true }}"><div style="position: absolute; inset: 0; background: linear-gradient(148deg, #24466f 0%, #16294a 52%, #0b1830 100%);"></div></sc-if>
                   </div>
                 </div>
@@ -894,7 +894,7 @@
               <sc-if value="{{ oc.flip }}" hint-placeholder-val="{{ false }}">
                 <div class="epcCard omPhoto" style="grid-column: 1; grid-row: 1; width: 100%; max-width: 440px; justify-self: end;">
                   <div class="epcBox" style="position: relative; border-radius: 14px; overflow: hidden; background: #0F1A2E; aspect-ratio: 4 / 3; box-shadow: 0 6px 18px rgba(14,28,52,0.1);">
-                    <sc-if value="{{ oc.hasImg }}" hint-placeholder-val="{{ false }}"><div class="epcImg" role="img" aria-label="{{ oc.title }}" style="{{ oc.imgStyle }}"></div></sc-if>
+                    <sc-if value="{{ oc.hasImg }}" hint-placeholder-val="{{ false }}"><img class="epcImg" ref="{{ oc.imgRef }}" alt="{{ oc.title }}" style="{{ oc.imgStyle }}"></sc-if>
                     <sc-if value="{{ oc.noImg }}" hint-placeholder-val="{{ true }}"><div style="position: absolute; inset: 0; background: linear-gradient(148deg, #24466f 0%, #16294a 52%, #0b1830 100%);"></div></sc-if>
                   </div>
                 </div>
@@ -935,7 +935,7 @@
                       <span style="font-size: clamp(1.04rem,1.3vw,1.2rem); font-weight: 650; letter-spacing: -0.03em; line-height: 1.3; color: #0f1a2e; text-wrap: balance;">{{ ec.title }}</span>
                     </div>
                     <div class="epcBox" style="position: relative; border-radius: 14px; overflow: hidden; background: #0F1A2E; aspect-ratio: 4 / 3; box-shadow: 0 6px 18px rgba(14,28,52,0.1);">
-                      <sc-if value="{{ ec.hasImg }}" hint-placeholder-val="{{ false }}"><div class="epcImg" role="img" aria-label="{{ ec.title }}" style="{{ ec.imgStyle }}"></div></sc-if>
+                      <sc-if value="{{ ec.hasImg }}" hint-placeholder-val="{{ false }}"><img class="epcImg" ref="{{ ec.imgRef }}" alt="{{ ec.title }}" style="{{ ec.imgStyle }}"></sc-if>
                       <sc-if value="{{ ec.noImg }}" hint-placeholder-val="{{ true }}">
                         <div style="position: absolute; inset: 0; background: linear-gradient(148deg, #24466f 0%, #16294a 52%, #0b1830 100%);"></div>
                         <span style="position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%); font-size: 0.72rem; font-weight: 600; letter-spacing: 0.14em; color: rgba(226,234,246,0.4);">SITE PHOTO</span>
@@ -960,7 +960,7 @@
         <sc-if value="{{ svEn }}" hint-placeholder-val="{{ false }}"><h2 style="font-size: clamp(1.9rem,3.3vw,5.3rem); font-weight: 750; letter-spacing: -0.03em; line-height: 1.15; color: #0f1a2e; margin: clamp(10px,0.9vw,24px) 0 clamp(28px,3.2vw,84px);">Solar, in perspective.</h2></sc-if>
         <sc-if value="{{ svKo }}" hint-placeholder-val="{{ true }}"><h2 style="font-size: clamp(1.9rem,3.3vw,5.3rem); font-weight: 750; letter-spacing: -0.03em; line-height: 1.15; color: #0f1a2e; margin: clamp(10px,0.9vw,24px) 0 clamp(28px,3.2vw,84px);">태양광 발전사업의 가치</h2></sc-if>
         <div class="svGrid" style="display: grid; grid-template-columns: minmax(0,50.4fr) minmax(0,34fr); align-items: center; gap: clamp(32px,5vw,170px);">
-          <div class="reveal" style="aspect-ratio: 842 / 593; background-image: url('images/bizdev-solar-perspective.webp'); background-size: cover; background-position: center;" role="img" aria-label="{{ altBizDev }}"></div>
+          <div class="reveal" style="aspect-ratio: 842 / 593; position: relative; overflow: hidden;"><img src="images/bizdev-solar-perspective.webp" alt="{{ altBizDev }}" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; display: block;"></div>
           <div style="display: flex; flex-direction: column; border-bottom: 1px solid #DCE1EA;">
             <div class="reveal rv-u" style="display: flex; flex-direction: column; padding: clamp(20px,1.9vw,52px) 0; border-top: 1px solid #DCE1EA;">
               <h3 style="font-size: clamp(1.05rem,1.5vw,2.45rem); font-weight: 800; letter-spacing: -0.02em; color: #0f1a2e; margin: 0;"><sc-if value="{{ svKo }}" hint-placeholder-val="{{ true }}">재생에너지 확대</sc-if><sc-if value="{{ svEn }}" hint-placeholder-val="{{ false }}">Expanding renewable energy</sc-if></h3>
@@ -1059,7 +1059,7 @@
         <sc-for list="{{ certCards }}" as="ct" hint-placeholder-count="3">
           <div class="reveal rv-u certTile" data-cert="{{ ct.i }}" onClick="{{ openCert }}" style="position: relative; background: transparent; cursor: pointer;">
             <div class="certBox" style="position: relative; width: 100%; aspect-ratio: 600 / 848; overflow: hidden; background: #fff; border: 1px solid rgba(0,0,0,0.28); transition: border-color 0.3s ease;">
-              <sc-if value="{{ ct.hasImg }}" hint-placeholder-val="{{ false }}"><div class="certImg" role="img" aria-label="{{ ct.name }}" style="{{ ct.imgStyle }}"></div></sc-if>
+              <sc-if value="{{ ct.hasImg }}" hint-placeholder-val="{{ false }}"><img class="certImg" ref="{{ ct.imgRef }}" alt="{{ ct.name }}" style="{{ ct.imgStyle }}"></sc-if>
               <sc-if value="{{ ct.noImg }}" hint-placeholder-val="{{ true }}">
                 <div style="position: absolute; inset: 0; background-image: linear-gradient(#e7ecf5 1px, transparent 1px); background-size: 100% 16px; -webkit-mask-image: linear-gradient(180deg, #000 0%, #000 66%, transparent 100%); mask-image: linear-gradient(180deg, #000 0%, #000 66%, transparent 100%);"></div>
                 <span style="position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%); font-size: 0.72rem; font-weight: 700; letter-spacing: 0.16em; color: #95a2b0;">CERTIFICATE</span>
@@ -1088,7 +1088,7 @@
         </button>
         <div class="certModal" style="--ch: min(600px, calc(100vh - 2 * clamp(20px,4vw,54px))); --cm: clamp(26px,3.4vw,42px); width: 100%; height: var(--ch); background: #fff; border-radius: 20px; overflow: hidden; box-shadow: 0 30px 70px rgba(6,14,30,0.4); display: grid; grid-template-columns: calc(var(--ch) * 0.7075) minmax(0,1fr); grid-template-rows: minmax(0,1fr);">
           <div style="position: relative; background: #f2f6fc; min-height: 0;">
-            <sc-if value="{{ certSelHasImg }}" hint-placeholder-val="{{ false }}"><div role="img" aria-label="{{ certSelName }}" style="{{ certSelImgStyle }}"></div></sc-if>
+            <sc-if value="{{ certSelHasImg }}" hint-placeholder-val="{{ false }}"><img ref="{{ certSelImgRef }}" alt="{{ certSelName }}" style="{{ certSelImgStyle }}"></sc-if>
             <sc-if value="{{ certSelNoImg }}" hint-placeholder-val="{{ true }}"><span style="position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%); font-size: 0.76rem; font-weight: 700; letter-spacing: 0.16em; color: #95a2b0;">CERTIFICATE</span></sc-if>
           </div>
           <div style="padding: clamp(26px,3.4vw,42px); min-height: 0; overflow-y: auto; overscroll-behavior: contain;" data-native-scroll="">
@@ -1266,22 +1266,36 @@
 
     <div data-about-snap="3" style="width: 100%; height: 100vh; overflow: hidden; box-sizing: border-box; padding: clamp(32px,5vh,80px) clamp(20px,5vw,80px) clamp(56px,8vh,110px); background: #F8F6F1; display: flex; flex-direction: column; align-items: center; justify-content: center;">
       <div style="width: 100%; max-width: 1440px; transform: translateY(clamp(14px,2.2vh,26px));">
-        <div style="--u: min(1vw, 1.65vh); font-size: clamp(0.9rem,calc(1.2 * var(--u)),1.45rem); font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: #5A7A14; margin-bottom: clamp(10px,0.9vw,20px); margin-top: clamp(30px,4.5vh,64px); text-align: center;">LOCATION</div>
+        <div style="--u: min(1vw, 1.65vh); font-size: clamp(0.9rem,calc(1.2 * var(--u)),1.45rem); font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: #5A7A14; margin-bottom: clamp(10px,0.9vw,20px); margin-top: 0; text-align: center;">LOCATION</div>
         <h2 style="margin: 0 0 clamp(30px,4.5vh,52px); font-size: clamp(1.9rem,3vw,4.4rem); font-weight: 750; line-height: 1.15; color: #0f1a2e; letter-spacing: -0.03em; text-align: center;">{{ dirTitle }}</h2>
-        <div onMouseEnter="{{ mapEnter }}" onMouseLeave="{{ mapLeave }}" onClick="{{ mapActivate }}" style="position: relative; border-radius: 16px; overflow: hidden; box-shadow: 0 14px 40px rgba(15,30,60,0.12); background: #e9edf3;">
-          <iframe title="map" src="{{ gmapSrc }}" style="pointer-events: {{ mapPE }}; width: 100%; height: min(38vh,400px); border: 0; display: block;"></iframe>
+        <div class="dirGrid" style="display: grid; grid-template-columns: min(77vh,800px,58vw) minmax(0,1fr); gap: clamp(32px,4.5vw,80px); align-items: center; max-width: 1320px; margin: clamp(12px,2.5vh,32px) auto 0;">
+        <div onMouseEnter="{{ mapEnter }}" onMouseLeave="{{ mapLeave }}" onClick="{{ mapActivate }}" style="position: relative; aspect-ratio: 4 / 3; border-radius: 16px; overflow: hidden; box-shadow: 0 14px 40px rgba(15,30,60,0.12); background: #e9edf3;">
+          <iframe title="map" src="{{ gmapSrc }}" style="pointer-events: {{ mapPE }}; width: 100%; height: 100%; border: 0; display: block;"></iframe>
           <div style="position: absolute; left: 0; right: 0; bottom: 14px; display: flex; justify-content: center; pointer-events: none; z-index: 3;">
             <span style="font-size: 12px; font-weight: 600; color: #4a5260; background: rgba(255,255,255,0.92); border: 1px solid #dce1ea; border-radius: 999px; padding: 6px 14px; box-shadow: 0 2px 8px rgba(15,30,60,0.12); white-space: nowrap;">{{ mapHint }}</span>
           </div>
         </div>
-        <div style="padding: 26px 2px 0;">
-          <div style="font-size: 12.5px; font-weight: 700; color: #1F3A5F; letter-spacing: 1.4px; margin-bottom: 14px">HEAD OFFICE</div>
-          <div style="display: grid; grid-template-columns: 104px 1fr; gap: 9px 56px; font-size: 14px; line-height: 1.6; color: #4a5260;">
-            <span style="color: #0f1a2e; font-weight: 700;">{{ dirLblName }}</span><span style="color: #4a5260;">{{ dirValName }}</span>
-            <span style="color: #0f1a2e; font-weight: 700;">{{ dirLblAddr }}</span><span style="color: #4a5260; word-break: keep-all;">{{ dirValAddr }}</span>
-            <span style="color: #0f1a2e; font-weight: 700;">{{ dirLblBiz }}</span><span style="color: #4a5260;">{{ abBizNo }}</span>
-            <span style="color: #0f1a2e; font-weight: 700;">{{ dirLblMail }}</span><span style="color: #4a5260;">{{ abEmail }}</span>
+        <div style="padding: 0 2px;">
+          <div style="font-size: clamp(13px,1vw,15px); font-weight: 700; color: #1F3A5F; letter-spacing: 1.4px; margin-bottom: 18px">HEAD OFFICE</div>
+          <div>
+            <div style="padding: clamp(12px,1.8vh,20px) 0;">
+              <div style="font-size: clamp(18px,1.6vw,24px); font-weight: 700; color: #0f1a2e; letter-spacing: -0.02em; line-height: 1.3; margin-bottom: 8px;">{{ dirLblName }}</div>
+              <div style="font-size: clamp(14px,1.1vw,16px); color: #4a5260; line-height: 1.6;">{{ dirValName }}</div>
+            </div>
+            <div style="padding: clamp(12px,1.8vh,20px) 0;">
+              <div style="font-size: clamp(18px,1.6vw,24px); font-weight: 700; color: #0f1a2e; letter-spacing: -0.02em; line-height: 1.3; margin-bottom: 8px;">{{ dirLblAddr }}</div>
+              <div style="font-size: clamp(14px,1.1vw,16px); color: #4a5260; line-height: 1.6; word-break: keep-all;">{{ dirValAddr }}</div>
+            </div>
+            <div style="padding: clamp(12px,1.8vh,20px) 0;">
+              <div style="font-size: clamp(18px,1.6vw,24px); font-weight: 700; color: #0f1a2e; letter-spacing: -0.02em; line-height: 1.3; margin-bottom: 8px;">{{ dirLblBiz }}</div>
+              <div style="font-size: clamp(14px,1.1vw,16px); color: #4a5260; line-height: 1.6;">{{ abBizNo }}</div>
+            </div>
+            <div style="padding: clamp(12px,1.8vh,20px) 0;">
+              <div style="font-size: clamp(18px,1.6vw,24px); font-weight: 700; color: #0f1a2e; letter-spacing: -0.02em; line-height: 1.3; margin-bottom: 8px;">{{ dirLblMail }}</div>
+              <div style="font-size: clamp(14px,1.1vw,16px); color: #4a5260; line-height: 1.6;">{{ abEmail }}</div>
+            </div>
           </div>
+        </div>
         </div>
       </div>
     </div>
@@ -1467,7 +1481,7 @@
               </sc-for>
               <sc-if value="{{ resDetailHasFigure }}" hint-placeholder-val="{{ false }}">
                 <figure style="margin: 22px 0 4px; display: flex; flex-direction: column; gap: 10px;">
-                  <div role="img" aria-label="{{ resDetailFigureAlt }}" style="{{ resDetailFigureStyle }}"></div>
+                  <img ref="{{ resDetailFigureRef }}" alt="{{ resDetailFigureAlt }}" style="{{ resDetailFigureStyle }}">
                   <figcaption style="font-size: 0.82rem; color: #95a2b0; line-height: 1.7;">{{ resDetailFigureCap }}</figcaption>
                 </figure>
               </sc-if>
@@ -2035,82 +2049,6 @@
     </div>
   </sc-if>
 
-  <div style="position: fixed; left: 0; top: 0; width: 2px; height: 2px; overflow: hidden; opacity: 0.01; pointer-events: none; z-index: -1;" aria-hidden="true">
-    <img style="width:2px;height:2px;object-fit:cover;" data-asset="images/korea-map.webp" alt="">
-    <img style="width:2px;height:2px;object-fit:cover;" data-asset="images/logo-sd-mark.webp" alt="">
-    <img style="width:2px;height:2px;object-fit:cover;" data-asset="images/main-hero-original-poster.webp" alt="">
-    <img style="width:2px;height:2px;object-fit:cover;" data-asset="images/home-about.webp" alt="">
-    <img style="width:2px;height:2px;object-fit:cover;" data-asset="images/home-projects-4.webp" alt="">
-    <img style="width:2px;height:2px;object-fit:cover;" data-asset="images/bizdev-solar-perspective.webp" alt="">
-    <img style="width:2px;height:2px;object-fit:cover;" data-asset="images/about-hero-photo-v2.webp" alt="">
-    <img style="width:2px;height:2px;object-fit:cover;" data-asset="images/history-bg-rooftop.webp" alt="">
-    <img style="width:2px;height:2px;object-fit:cover;" data-asset="images/hdr-resources.webp" alt="">
-    <img style="width:2px;height:2px;object-fit:cover;" data-asset="images/hdr-greeting-4.webp" alt="">
-    <img style="width:2px;height:2px;object-fit:cover;" data-asset="images/om-01-cleaning.webp" alt="">
-    <img style="width:2px;height:2px;object-fit:cover;" data-asset="images/om-02-fence-mowing.webp" alt="">
-    <img style="width:2px;height:2px;object-fit:cover;" data-asset="images/om-03-module-check.webp" alt="">
-    <img style="width:2px;height:2px;object-fit:cover;" data-asset="images/om-04-combiner-inverter.webp" alt="">
-    <img style="width:2px;height:2px;object-fit:cover;" data-asset="images/om-05-wiring.webp" alt="">
-    <img style="width:2px;height:2px;object-fit:cover;" data-asset="images/om-06-structure.webp" alt="">
-    <img style="width:2px;height:2px;object-fit:cover;" data-asset="images/epc-01-site-review-v2.webp" alt="">
-    <img style="width:2px;height:2px;object-fit:cover;" data-asset="images/epc-02-safety-v2.webp" alt="">
-    <img style="width:2px;height:2px;object-fit:cover;" data-asset="images/epc-03-grading-v2.webp" alt="">
-    <img style="width:2px;height:2px;object-fit:cover;" data-asset="images/epc-04-foundation-v2.webp" alt="">
-    <img style="width:2px;height:2px;object-fit:cover;" data-asset="images/epc-05-elec-room-v2.webp" alt="">
-    <img style="width:2px;height:2px;object-fit:cover;" data-asset="images/epc-06-structure-v2.webp" alt="">
-    <img style="width:2px;height:2px;object-fit:cover;" data-asset="images/epc-07-electrical-v2.webp" alt="">
-    <img style="width:2px;height:2px;object-fit:cover;" data-asset="images/epc-08-switchgear-v2.webp" alt="">
-    <img style="width:2px;height:2px;object-fit:cover;" data-asset="images/epc-09-safety-diag-v2.webp" alt="">
-    <img style="width:2px;height:2px;object-fit:cover;" data-asset="images/epc-10-grid-line-v2.webp" alt="">
-    <img style="width:2px;height:2px;object-fit:cover;" data-asset="images/epc-11-pre-inspect-v2.webp" alt="">
-    <img style="width:2px;height:2px;object-fit:cover;" data-asset="images/epc-12-fence-paving-v2.webp" alt="">
-    <img style="width:2px;height:2px;object-fit:cover;" data-asset="images/cert-venture-q.webp" alt="">
-    <img style="width:2px;height:2px;object-fit:cover;" data-asset="images/cert-lab-q.webp" alt="">
-    <img style="width:2px;height:2px;object-fit:cover;" data-asset="images/cert-elec-q.webp" alt="">
-    <img style="width:2px;height:2px;object-fit:cover;" data-asset="images/plant-imsil.jpg" alt="">
-    <img style="width:2px;height:2px;object-fit:cover;" data-asset="images/plant-osang-v2.jpg" alt="">
-    <img style="width:2px;height:2px;object-fit:cover;" data-asset="images/plant-yanggu.jpg" alt="">
-    <img style="width:2px;height:2px;object-fit:cover;" data-asset="images/plant-uki.webp" alt="">
-    <img style="width:2px;height:2px;object-fit:cover;" data-asset="images/plant-oita.webp" alt="">
-    <img style="width:2px;height:2px;object-fit:cover;" data-asset="images/plant-tokusa.webp" alt="">
-    <img style="width:2px;height:2px;object-fit:cover;" data-asset="images/plant-nihoshimogo.webp" alt="">
-    <img style="width:2px;height:2px;object-fit:cover;" data-asset="images/plant-kasaoka.webp" alt="">
-    <img style="width:2px;height:2px;object-fit:cover;" data-asset="images/plant-kunisaki.webp" alt="">
-    <img style="width:2px;height:2px;object-fit:cover;" data-asset="images/solar-principle-diagram-v2.webp" alt="">
-    <img style="width:2px;height:2px;object-fit:cover;" data-asset="images/solar-panel-types-diagram-v3.webp" alt="">
-    <img style="width:2px;height:2px;object-fit:cover;" data-asset="images/solar-om-diagram-v2.webp" alt="">
-    <img style="width:2px;height:2px;object-fit:cover;" data-asset="images/policy-permit-flow-diagram-q.jpg" alt="">
-    <img style="width:2px;height:2px;object-fit:cover;" data-asset="images/policy-setback-diagram-q.jpg" alt="">
-    <img style="width:2px;height:2px;object-fit:cover;" data-asset="images/policy-agrivoltaic-diagram-q.jpg" alt="">
-    <img style="width:2px;height:2px;object-fit:cover;" data-asset="images/policy-re100-ppa-diagram-q.jpg" alt="">
-    <img style="width:2px;height:2px;object-fit:cover;" data-asset="images/about-hero-photo-q.webp" alt="">
-    <img style="width:2px;height:2px;object-fit:cover;" data-asset="images/home-projects-2.webp" alt="">
-    <img style="width:2px;height:2px;object-fit:cover;" data-asset="images/yanggu-plant-v3.webp" alt="">
-    <img style="width:2px;height:2px;object-fit:cover;" data-asset="images/hdr-business-6.webp" alt="">
-    <img style="width:2px;height:2px;object-fit:cover;" data-asset="images/hdr-projects.webp" alt="">
-    <img style="width:2px;height:2px;object-fit:cover;" data-asset="images/hdr-office.webp" alt="">
-    <img style="width:2px;height:2px;object-fit:cover;" data-asset="images/logo-sd.webp" alt="">
-    <img style="width:2px;height:2px;object-fit:cover;" data-asset="images/main-hero-mobile-v2-poster.webp" alt="">
-    <img style="width:2px;height:2px;object-fit:cover;" data-asset="images/policy-agrivoltaic-diagram-v2.webp" alt="">
-    <img style="width:2px;height:2px;object-fit:cover;" data-asset="images/solar-principle-diagram-en-v2.webp" alt="">
-    <img style="width:2px;height:2px;object-fit:cover;" data-asset="images/solar-panel-types-diagram-en-v2.webp" alt="">
-    <img style="width:2px;height:2px;object-fit:cover;" data-asset="images/solar-om-diagram-en-v3.webp" alt="">
-    <img style="width:2px;height:2px;object-fit:cover;" data-asset="images/solar-permit-diagram-en-v1.webp" alt="">
-    <img style="width:2px;height:2px;object-fit:cover;" data-asset="images/solar-setback-diagram-en-v1.webp" alt="">
-    <img style="width:2px;height:2px;object-fit:cover;" data-asset="images/policy-agrivoltaic-diagram-en-v1.webp" alt="">
-    <img style="width:2px;height:2px;object-fit:cover;" data-asset="images/policy-re100-ppa-diagram-en-v2.webp" alt="">
-    <img style="width:2px;height:2px;object-fit:cover;" data-asset="images/hyeondong-c-q.jpg" alt="">
-    <img style="width:2px;height:2px;object-fit:cover;" data-asset="images/cert-investor-q.webp" alt="">
-    <img style="width:2px;height:2px;object-fit:cover;" data-asset="images/cert-innobiz-2026.webp" alt="">
-    <img style="width:2px;height:2px;object-fit:cover;" data-asset="images/cert-patent-q.webp" alt="">
-    <img style="width:2px;height:2px;object-fit:cover;" data-asset="images/beopjeon-c-q.jpg" alt="">
-    <img style="width:2px;height:2px;object-fit:cover;" data-asset="images/bongyang-d-q.jpg" alt="">
-    <img style="width:2px;height:2px;object-fit:cover;" data-asset="images/geochang-d-q.jpg" alt="">
-    <img style="width:2px;height:2px;object-fit:cover;" data-asset="images/gagok-c.jpg" alt="">
-    <img style="width:2px;height:2px;object-fit:cover;" data-asset="images/jindo-d-q.jpg" alt="">
-    <img style="width:2px;height:2px;object-fit:cover;" data-asset="images/logo-sd-v-white.webp" alt="">
-    <img style="width:2px;height:2px;object-fit:cover;" data-asset="images/logo-sd-v-navy.webp" alt="">
-  </div>
 
   </div>
 
@@ -4437,6 +4375,38 @@ class Component extends DCLogic {
   }
   setNavHover = (i) => this.setState({ navHover: i });
   txtW(s) { let w = 0; for (const ch of String(s || "")) w += /[\uAC00-\uD7A3]/.test(ch) ? 15 : (ch === " " ? 5 : 8.5); return w; }
+  subTW(t) {
+    const c = this._mc || (this._mc = document.createElement("canvas").getContext("2d"));
+    c.font = '500 15px Montserrat, Pretendard, "Noto Sans KR", sans-serif';
+    return c.measureText(String(t)).width - 0.2 * String(t).length;
+  }
+  subRowLay(i, groups) {
+    const vw = (typeof window !== "undefined" && window.innerWidth) || 1440;
+    const p = this.state.menuOpen ? 0 : (this.state.navP || 0);
+    const inset = p * Math.max(24, (vw - 920) / 2) + 24, lim1 = vw - inset;
+    const icx = this._icx || {};
+    const lay = (gi) => { const subs = groups[gi].subs; const ws = subs.map((x) => this.subTW(x.label)); const ai = Math.max(0, subs.findIndex((x) => /EPC/.test(x.label))); let pre = 0; for (let k = 0; k < ai; k++) pre += ws[k]; let post = 0; for (let k = ai + 1; k < ws.length; k++) post += ws[k]; return { ws, ai, pre, post, aw: ws[ai] || 0, n: subs.length, cx: icx[gi] != null ? icx[gi] : (this.state.navHoverCx != null ? this.state.navHoverCx : vw / 2) }; };
+    let G = 44; const bi = groups.findIndex((gg) => gg.subs.some((x) => /EPC/.test(x.label)));
+    if (bi >= 0) { const b = lay(bi); const k = b.n - 1 - b.ai; if (k > 0) { const room = lim1 - (b.cx + b.aw / 2) - b.post; G = Math.min(44, Math.max(20, room / k)); } }
+    const L = lay(i); const tw = L.ws.reduce((a, b) => a + b, 0);
+    let m = -(L.pre + L.ai * G) - L.aw / 2; let start = L.cx + m;
+    if (start < inset) { m += inset - start; start = inset; }
+    const rowW = tw + G * (L.n - 1);
+    if (start + rowW > lim1) m -= start + rowW - lim1;
+    return { m: m, g: G };
+  }
+  subRowShift(i) {
+    const base = -((this.state["swx" + i] || 0) / 2), rowW = this.state["srw" + i] || 0;
+    const vw = (typeof window !== "undefined" && window.innerWidth) || 1440;
+    const p = this.state.menuOpen ? 0 : (this.state.navP || 0);
+    const inset = p * Math.max(24, (vw - 920) / 2) + 24;
+    const lim0 = inset, lim1 = vw - inset;
+    const cx = (this.state.navHoverCx != null) ? this.state.navHoverCx : vw / 2;
+    const start = cx + base; let shift = 0;
+    if (start + rowW > lim1) shift = lim1 - (start + rowW);
+    if (start + shift < lim0) shift = lim0 - start;
+    return base + shift;
+  }
   subRowMargin(labels) {
     const base = -this.txtW(labels[0]) / 2;
     let rowW = 0; labels.forEach((s, i) => { rowW += this.txtW(s); if (i) rowW += 44; });
@@ -4458,16 +4428,17 @@ class Component extends DCLogic {
     const dropOff = Math.round((78 - 22 * p) / 2 - 11);
     // viewport-y of the header's horizontal hairline (same formula as navPanelTop + navPanelLineTop)
     const hLineY = (78 - 22 * p) + 14 * p;
+    const subH = 60 - 4 * p, hBot = this.state.navHoverBot || (hLineY - 36);
     const t = p;
     const gap = "clamp(30px,2.9vw,55px)";
     return e("div", { className: "r-topmenu", onMouseLeave: () => this.setNavHover(null), style: { display: "flex", gap: gap, marginLeft: "auto", marginRight: "clamp(28px,3.4vw,64px)", fontSize: "clamp(14.5px,1.1vw,17.5px)", fontWeight: 600, whiteSpace: "nowrap", position: "relative", top: (4 - 3 * Math.max(0, Math.min(1, t))).toFixed(1) + "px" } },
       groups.map((g, i) => {
         const open = this.state.navHover === i && g.subs.length > 0;
-        return e("div", { key: i, ref: (el) => { if (!el || !open) return; try { const b = el.getBoundingClientRect().bottom; if (Math.abs((this.state.navHoverBot || 0) - b) > 0.5) this.setState({ navHoverBot: b }); } catch (err) {} }, onMouseEnter: (ev) => { let cx = null, bt = null; try { const r = ev.currentTarget.getBoundingClientRect(); cx = r.left + r.width / 2; bt = r.bottom; } catch (err) {} this.setState({ navHover: i, navHoverCx: cx, navHoverBot: bt }); }, style: { position: "relative", display: "flex", alignItems: "center" } },
+        return e("div", { key: i, ref: (el) => { if (el) { try { const rr = el.getBoundingClientRect(); (this._icx || (this._icx = {}))[i] = rr.left + rr.width / 2; } catch (err) {} } if (!el || !open) return; try { const b = el.getBoundingClientRect().bottom; if (Math.abs((this.state.navHoverBot || 0) - b) > 0.5) this.setState({ navHoverBot: b }); } catch (err) {} }, onMouseEnter: (ev) => { let cx = null, bt = null; try { const r = ev.currentTarget.getBoundingClientRect(); cx = r.left + r.width / 2; bt = r.bottom; } catch (err) {} this.setState({ navHover: i, navHoverCx: cx, navHoverBot: bt }); }, style: { position: "relative", display: "flex", alignItems: "center" } },
           e("a", { href: "#", onClick: go(g.page), style: { font: "inherit", fontWeight: 600, whiteSpace: "nowrap", color: open ? (sc ? "#8fa61f" : "#b5cb3b") : color, textDecoration: "none", transition: "color .15s linear" } }, g.label),
-          open ? e("div", { style: { position: "absolute", top: "100%", left: "50%", width: "400vw", transform: "translateX(-50%)", height: (60 + dropOff) + "px", animation: "menufade .15s ease-out" } },
+          open ? e("div", { style: { position: "absolute", top: "100%", left: "50%", width: "400vw", transform: "translateX(-50%)", height: Math.max(0, hLineY + subH - hBot).toFixed(1) + "px", animation: "menufade .15s ease-out" } },
             e("div", { style: { position: "absolute", left: "50%", top: (hLineY - (this.state.navHoverBot || (hLineY - 18 - 18)) - (sc ? 11 : 18)).toFixed(1) + "px", width: "1px", height: (sc ? 11 : 18) + "px", background: sc ? "rgba(22,41,74,.45)" : "rgba(255,255,255,.55)", transformOrigin: "top center", animation: "navline .26s ease-out both" } }),
-            e("div", { ref: (el) => { if (!el) return; const f = el.firstElementChild; if (!f) return; const w = f.getBoundingClientRect().width; if (!w) return; const key = "swx" + i; if (Math.abs((this.state[key] || 0) - w) > 0.5) this.setState({ [key]: w }); }, style: { position: "absolute", left: "50%", top: (dropOff - 6) + "px", height: "60px", marginLeft: (-((this.state["swx" + i] || 0) / 2)).toFixed(1) + "px", display: "flex", alignItems: "center", gap: "44px" } },
+            e("div", { ref: (el) => { if (!el) return; const f = el.firstElementChild; if (!f) return; const w = f.getBoundingClientRect().width; let rw = 0; const ws = []; for (const c of el.children) { const cw = c.getBoundingClientRect().width; ws.push(cw); rw += cw; } const ai = Math.max(0, g.subs.findIndex((s) => /EPC/.test(s.label))); let pre = 0; for (let k = 0; k < ai; k++) pre += ws[k]; const aw = ws[ai] || w; if (Math.abs((this.state["sap" + i] || 0) - pre) > 0.5 || Math.abs((this.state["saw" + i] || 0) - aw) > 0.5) this.setState({ ["sap" + i]: pre, ["saw" + i]: aw, ["sai" + i]: ai }); if (!w) return; const key = "swx" + i, rk = "srw" + i; if (Math.abs((this.state[key] || 0) - w) > 0.5 || Math.abs((this.state[rk] || 0) - rw) > 0.5) this.setState({ [key]: w, [rk]: rw }); }, style: { position: "absolute", left: "50%", top: (hLineY - hBot).toFixed(1) + "px", height: subH.toFixed(1) + "px", marginLeft: this.subRowLay(i, groups).m.toFixed(1) + "px", display: "flex", alignItems: "center", gap: this.subRowLay(i, groups).g.toFixed(1) + "px" } },
               g.subs.map((s2, si) => e("a", { key: si, href: "#", onClick: go(s2.page), onMouseEnter: () => this.setState({ navSubHover: i + "-" + si }), onMouseLeave: () => this.setState({ navSubHover: null }), style: { fontSize: "15px", fontWeight: 500, color: this.state.navSubHover === i + "-" + si ? (sc ? "#8fa61f" : "#b5cb3b") : (sc ? "#1F3A5F" : "rgba(255,255,255,.9)"), transition: "color .15s linear", textDecoration: "none", whiteSpace: "nowrap", letterSpacing: "-.2px", animation: "navdrop .3s cubic-bezier(.2,.7,.3,1) both", animationDelay: ".1s" } }, s2.label)))) : null);
       }));
   }
@@ -4755,6 +4726,7 @@ class Component extends DCLogic {
       const el = document.querySelector('img[data-asset="' + path + '"]');
       return el && el.src ? el.src : this._webp(path.replace(/^assets\//, "images/"));
     };
+    const imgRef = (u) => (el) => { if (el && u && el.getAttribute("src") !== u) el.setAttribute("src", u); };
     let mapCardStyle = null;
     const mapCardStatic = { position: "absolute", inset: 0, width: "100%", height: "100%", display: "flex", flexDirection: "column", background: "#fff", borderRadius: "16px", boxShadow: "0 18px 44px rgba(14,28,52,0.16)", border: "1px solid #dce1ea", overflow: "hidden", opacity: selPlant ? 1 : 0, visibility: selPlant ? "visible" : "hidden", pointerEvents: selPlant ? "auto" : "none", transition: "opacity 0.18s ease" };
     mapCardStyle = mapCardStatic;
@@ -4852,7 +4824,7 @@ class Component extends DCLogic {
       topMenu: this.renderTopMenu(navGroups),
       navHovering: (st.navHover !== null && st.navHover !== undefined && (navGroups[st.navHover] || { subs: [] }).subs.length > 0),
       navPanelTop: (14 * (st.menuOpen ? 0 : npv)).toFixed(1) + "px",
-      navPanelInnerH: ((78 - 22 * npv) + 60).toFixed(2) + "px",
+      navPanelInnerH: ((78 - 22 * npv) + 60 - 4 * npv).toFixed(2) + "px",
       navPanelW: "calc(100% - " + ((st.menuOpen ? 0 : npv) * 2 * Math.max(24, ((typeof window !== 'undefined' ? window.innerWidth : 1440) - 920) / 2)).toFixed(1) + "px)",
       navPanelBg: (npv > 0.55 ? (st.navDark ? "rgba(18,20,24," + (0.5 * npv).toFixed(3) + ")" : "rgba(236,236,236," + (0.7 * npv).toFixed(3) + ")") : "rgba(20,22,26,.42)"),
       navPanelRadius: (26 * (st.menuOpen ? 0 : npv)).toFixed(1) + "px",
@@ -4922,8 +4894,8 @@ class Component extends DCLogic {
       goldHover: { filter: "brightness(1.06)", transform: "translateY(-1px)" },
       greenHover: { background: "#0F1A2E", transform: "translateY(-1px)" },
       altPhoto: st.lang === "en" ? "photo" : "사진", altImage: st.lang === "en" ? "image" : "이미지",
-      altHeroVideo: st.lang === "en" ? "Aerial footage of a solar power plant" : "태양광 발전소 항공 영상",
-      altHomeAbout: st.lang === "en" ? "Building with trees and plants growing on its terraces" : "테라스마다 나무와 식물이 자라는 건물 외관",
+      altHeroVideo: st.lang === "en" ? "Footage of a solar farm, an energy storage facility and a wind farm" : "태양광 발전소, 에너지 저장장치, 풍력 발전 단지를 차례로 보여주는 영상",
+      altHomeAbout: st.lang === "en" ? "Hand holding a light bulb with a seedling growing inside, surrounded by clean-energy icons" : "새싹이 자라는 전구를 든 손과 친환경 에너지 아이콘",
       altHomeProjects: st.lang === "en" ? "Aerial view of a large solar farm" : "대규모 태양광 발전 단지 항공 사진",
       altBizDev: st.lang === "en" ? "Solar modules with mountains and a lake in the background" : "산과 호수를 배경으로 펼쳐진 태양광 모듈",
       showTop: st.showTop && st.page !== "admin",
@@ -5082,7 +5054,7 @@ class Component extends DCLogic {
       essSteps: essD.steps,
       essScope: essD.scope.filter((t) => String(t).trim()).map((t, i) => ({ no: String(i + 1).padStart(2, "0"), t })),
       omT1: "발전소 내부관리",
-      omCards: (st.data.om || []).map((o, oi, arr) => ({ flip: oi % 2 === 1, keep: oi % 2 === 0, noPad: String(o.no || "").padStart(2, "0"), lineStyle: { position: "absolute", left: "50%", width: "2px", marginLeft: "-1px", background: "#1F3A5F", top: oi === 0 ? "50%" : 0, bottom: oi === arr.length - 1 ? "50%" : 0 }, no: o.no, title: st.lang === "en" ? (String(o.titleEn || "").trim() || ({ "1": "Module cleaning", "2": "Fence check & mowing", "3": "Module inspection", "4": "Combiner box & inverter check", "5": "Wiring inspection", "6": "Structure & equipment check" })[o.no] || o.title) : o.title, hasImg: !!o.img, noImg: !o.img, imgStyle: { position: "absolute", inset: 0, backgroundImage: o.img ? "url(" + JSON.stringify(/^assets\//.test(o.img) ? resolveAsset(o.img) : o.img) + ")" : "none", backgroundSize: "cover", backgroundPosition: "center", willChange: "transform" } })),
+      omCards: (st.data.om || []).map((o, oi, arr) => ({ flip: oi % 2 === 1, keep: oi % 2 === 0, noPad: String(o.no || "").padStart(2, "0"), lineStyle: { position: "absolute", left: "50%", width: "2px", marginLeft: "-1px", background: "#1F3A5F", top: oi === 0 ? "50%" : 0, bottom: oi === arr.length - 1 ? "50%" : 0 }, no: o.no, title: st.lang === "en" ? (String(o.titleEn || "").trim() || ({ "1": "Module cleaning", "2": "Fence check & mowing", "3": "Module inspection", "4": "Combiner box & inverter check", "5": "Wiring inspection", "6": "Structure & equipment check" })[o.no] || o.title) : o.title, hasImg: !!o.img, noImg: !o.img, imgRef: imgRef(o.img ? (/^assets\//.test(o.img) ? resolveAsset(o.img) : o.img) : ""), imgStyle: { position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", objectPosition: "center", display: "block", willChange: "transform" } })),
       epcLead1: st.lang === "en" ? "We build solar power plants ourselves, designed for the optimal structure in terms of stability, cost efficiency and usability." : "안정성, 경제성, 사용성을 고려하여 최적의 구조로 설계한 태양광발전소 공사를 직접 진행합니다.",
       epcLead2: st.lang === "en" ? "We use certified equipment and materials to raise the quality of every plant." : "보증된 기자재를 사용하여 발전소의 질적 향상을 도모합니다.",
       epcRows: (() => {
@@ -5090,7 +5062,7 @@ class Component extends DCLogic {
           const src = s.img ? (/^assets\//.test(s.img) ? resolveAsset(s.img) : s.img) : "";
           return {
             no: s.no, noPad: String(s.no || "").padStart(2, "0"), title: st.lang === "en" ? (String(s.titleEn || "").trim() || ((((this._defaultData || {}).epcSteps || []).find((d) => d.no === s.no) || {}).titleEn) || s.title) : s.title, hasImg: !!src, noImg: !src,
-            imgStyle: { position: "absolute", inset: 0, backgroundImage: src ? "url(" + JSON.stringify(src) + ")" : "none", backgroundSize: "cover", backgroundPosition: "center" },
+            imgRef: imgRef(src), imgStyle: { position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", objectPosition: "center", display: "block" },
           };
         });
         const rows = [];
@@ -5114,7 +5086,7 @@ class Component extends DCLogic {
         const src = s.img ? (/^assets\//.test(s.img) ? resolveAsset(s.img) : s.img) : "";
         return {
           no: s.no, title: st.lang === "en" ? (String(s.titleEn || "").trim() || ((((this._defaultData || {}).epcSteps || []).find((d) => d.no === s.no) || {}).titleEn) || s.title) : s.title, hasImg: !!src, noImg: !src,
-          imgStyle: { position: "absolute", inset: 0, backgroundImage: src ? "url(" + JSON.stringify(src) + ")" : "none", backgroundSize: "cover", backgroundPosition: "center" },
+          imgRef: imgRef(src), imgStyle: { position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", objectPosition: "center", display: "block" },
         };
       }),
       re100Ways: [
@@ -5247,7 +5219,8 @@ class Component extends DCLogic {
       certSelName: (() => { const s = (st.data.certs || [])[st.certSel]; return s ? T(s, "name") : ""; })(),
       certSelIssuer: (() => { const s = (st.data.certs || [])[st.certSel]; return s ? T(s, "issuer") : ""; })(),
       certSelImg: (() => { const s = (st.data.certs || [])[st.certSel]; if (!s || !s.img) return ""; return /^assets\//.test(s.img) ? resolveAsset(s.img) : s.img; })(),
-      certSelImgStyle: (() => { const s = (st.data.certs || [])[st.certSel]; const src = (s && s.img) ? (/^assets\//.test(s.img) ? resolveAsset(s.img) : s.img) : ""; return { position: "absolute", left: "50%", top: "50%", transform: "translate(-50%,-50%)", height: "100%", maxWidth: "100%", aspectRatio: "600 / 848", backgroundColor: "#fff", backgroundImage: src ? "url(" + JSON.stringify(src) + ")" : "none", backgroundSize: "100% 100%", backgroundPosition: "center", backgroundRepeat: "no-repeat" }; })(),
+      certSelImgStyle: (() => { const s = (st.data.certs || [])[st.certSel]; const src = (s && s.img) ? (/^assets\//.test(s.img) ? resolveAsset(s.img) : s.img) : ""; return { position: "absolute", left: "50%", top: "50%", transform: "translate(-50%,-50%)", height: "100%", maxWidth: "100%", aspectRatio: "600 / 848", backgroundColor: "#fff", objectFit: "fill", display: "block" }; })(),
+      certSelImgRef: imgRef((() => { const s = (st.data.certs || [])[st.certSel]; return (s && s.img) ? (/^assets\//.test(s.img) ? resolveAsset(s.img) : s.img) : ""; })()),
       certSelHasImg: (() => { const s = (st.data.certs || [])[st.certSel]; return !!(s && s.img); })(),
       certSelNoImg: (() => { const s = (st.data.certs || [])[st.certSel]; return !!(s && !s.img); })(),
       certSelRows: (() => { const s = (st.data.certs || [])[st.certSel]; if (!s) return []; return (T(s, "info") || "").split("\n").map((ln) => { const p = ln.split(/:(.+)/); return { k: (p[0] || "").trim(), v: (p[1] || "").trim() }; }).filter((r) => r.k || r.v); })(),
@@ -5255,7 +5228,7 @@ class Component extends DCLogic {
       closeCert: () => this.setState({ certSel: null }),
       certPrev: (e) => { e.stopPropagation(); this.setState((s) => { const n = ((s.data && s.data.certs) || []).length; return (!n || s.certSel == null) ? null : { certSel: (s.certSel - 1 + n) % n }; }); },
       certNext: (e) => { e.stopPropagation(); this.setState((s) => { const n = ((s.data && s.data.certs) || []).length; return (!n || s.certSel == null) ? null : { certSel: (s.certSel + 1) % n }; }); },
-      certCards: (() => { if (inAdmin) return []; const src = (st.data.certs && st.data.certs.length) ? st.data.certs : this.defaultCerts(); return src.map((c2, ci) => ({ i: ci, noImg: !c2.img, name: T(c2, "name"), issuer: T(c2, "issuer"), img: c2.img ? resolveAsset(c2.img) : "", hasImg: !!c2.img, imgStyle: { width: "100%", aspectRatio: "600 / 848", backgroundImage: c2.img ? 'url("' + resolveAsset(c2.img) + '")' : undefined, backgroundSize: "100% 100%", backgroundRepeat: "no-repeat", backgroundPosition: "center", backgroundColor: "#fff", display: "block" }, cardStyle: { background: "#fff", border: "1px solid #dce1ea", borderTop: "3px solid var(--sd-accent, #1F3A5F)", borderRadius: 14, boxShadow: "0 6px 20px rgba(20,40,74,0.07)", padding: "clamp(26px,4vw,36px)", display: "grid", gridTemplateColumns: c2.img ? "minmax(0,240px) 1fr" : "1fr", gap: "clamp(22px,4vw,36px)", alignItems: "start" }, rows: (T(c2, "info") || "").split("\n").filter((x) => x.trim()).map((ln) => { const p = ln.split(/:(.+)/); return { k: (p[0] || ""), v: (p[1] || "").replace(/^ /, "") }; }) })); })(),
+      certCards: (() => { if (inAdmin) return []; const src = (st.data.certs && st.data.certs.length) ? st.data.certs : this.defaultCerts(); return src.map((c2, ci) => ({ i: ci, noImg: !c2.img, name: T(c2, "name"), issuer: T(c2, "issuer"), img: c2.img ? resolveAsset(c2.img) : "", hasImg: !!c2.img, imgRef: imgRef(c2.img ? resolveAsset(c2.img) : ""), imgStyle: { width: "100%", aspectRatio: "600 / 848", objectFit: "fill", backgroundColor: "#fff", display: "block" }, cardStyle: { background: "#fff", border: "1px solid #dce1ea", borderTop: "3px solid var(--sd-accent, #1F3A5F)", borderRadius: 14, boxShadow: "0 6px 20px rgba(20,40,74,0.07)", padding: "clamp(26px,4vw,36px)", display: "grid", gridTemplateColumns: c2.img ? "minmax(0,240px) 1fr" : "1fr", gap: "clamp(22px,4vw,36px)", alignItems: "start" }, rows: (T(c2, "info") || "").split("\n").filter((x) => x.trim()).map((ln) => { const p = ln.split(/:(.+)/); return { k: (p[0] || ""), v: (p[1] || "").replace(/^ /, "") }; }) })); })(),
       orgCols: [
         { head: "경영지원부", teams: ["총무인사팀", "재무회계팀", "영업지원팀"] },
         { head: "기술연구소", teams: ["기술 연구팀", "기술 적용팀"] },
@@ -5334,14 +5307,9 @@ class Component extends DCLogic {
       resDetailFigureStyle: (() => {
         const r = (this.__resRows || [])[st.resOpen]; const src = (r && r.figure) || "";
         if (!src) return { display: "none" };
-        const ar = (this.__figAR || {})[src];
-        if (!ar && typeof Image !== "undefined") {
-          const im = new Image();
-          im.onload = () => { this.__figAR = Object.assign({}, this.__figAR, { [src]: im.naturalWidth / im.naturalHeight }); this.forceUpdate(); };
-          im.src = src;
-        }
-        return { width: "100%", aspectRatio: String(ar || 1.1), backgroundImage: 'url("' + src + '")', backgroundSize: "contain", backgroundPosition: "center", backgroundRepeat: "no-repeat", border: "1px solid #DCE1EA", borderRadius: "14px", backgroundColor: "#fff" };
+        return { width: "100%", height: "auto", display: "block", boxSizing: "border-box", border: "1px solid #DCE1EA", borderRadius: "14px", backgroundColor: "#fff" };
       })(),
+      resDetailFigureRef: imgRef((() => { const r = (this.__resRows || [])[st.resOpen]; return (r && r.figure) || ""; })()),
       resDetailFigureAlt: (() => { const r = (this.__resRows || [])[st.resOpen]; return (r && (r.figureCap || r.title)) || ""; })(),
       resDetailFigureCap: (() => { const r = (this.__resRows || [])[st.resOpen]; return (r && r.figureCap) || ""; })(),
       resDetailHasPanels: (() => { const r = (this.__resRows || [])[st.resOpen]; return !!(r && r.hasPanels); })(),
@@ -5636,11 +5604,10 @@ class Component extends DCLogic {
       photoLayers: allPlants.filter((p) => p.photo).map((p) => ({
         id: p.id,
         key: "ph-" + p.id,
-        role: p.id === mapSel ? "img" : undefined, hidden: p.id === mapSel ? undefined : "true", alt: String(p.name || "") + (st.lang === "en" ? " photo" : " 사진"),
+        ref: imgRef(resolveAsset(p.photo)), hidden: p.id === mapSel ? undefined : "true", alt: p.id === mapSel ? String(p.name || "") + (st.lang === "en" ? " photo" : " 사진") : "",
         style: {
-          position: "absolute", inset: 0,
-          backgroundImage: "url(" + JSON.stringify(resolveAsset(p.photo)) + ")",
-          backgroundSize: /yanggu-plant/.test(String(p.photo)) ? "contain" : "cover", backgroundPosition: p.id === "bongyang" ? "15% center" : (p.id === "kasaoka" || /plant-kasaoka/.test(String(p.photo))) ? "0% center" : "center", backgroundRepeat: "no-repeat",
+          position: "absolute", inset: 0, width: "100%", height: "100%", display: "block",
+          objectFit: /yanggu-plant/.test(String(p.photo)) ? "contain" : "cover", objectPosition: p.id === "bongyang" ? "15% center" : (p.id === "kasaoka" || /plant-kasaoka/.test(String(p.photo))) ? "0% center" : "center",
           backgroundColor: /yanggu-plant/.test(String(p.photo)) ? "#ffffff" : "transparent",
           opacity: mapSel === p.id ? 1 : 0,
           transition: "opacity 0.35s ease",
