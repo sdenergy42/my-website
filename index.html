@@ -231,7 +231,44 @@
     .reveal, .reveal.armed { opacity: 1 !important; transform: none !important; transition: none; }
   }
   @media (max-width: 900px) { .mapSplit { grid-template-columns: 1fr !important; } }
-  @media (max-width: 999px) { .mapTri { grid-template-columns: 1fr !important; } }
+  @media (max-width: 999px) {
+    .mapTri { display: grid !important; grid-template-columns: minmax(0, max(320px, min(560px, calc(95.7vh - 175px)))) !important; justify-content: center; grid-template-areas: "stage" "info"; gap: 14px !important; }
+    .mapTri > .mpStage { display: block !important; grid-area: stage; border: 1px solid #DCE1EA; border-radius: 16px; background: #fff; position: relative; }
+    .mapTri > .mpZoom { display: flex !important; grid-area: stage; align-self: end; justify-self: end; margin: 0 10px 10px 0; position: relative; z-index: 30; }
+    .mapTri > [data-mp] [data-map-panel] > div:nth-child(2) { display: none !important; }
+    .mapTri > [data-info-rg] { grid-area: info; animation: mpInfoIn 0.45s ease both; }
+    .mapTri > .mapAlt { display: flex !important; }
+    .mapTri:not([data-open-rg="kr"]) > [data-info-rg="kr"], .mapTri:not([data-open-rg="jp"]) > [data-info-rg="jp"] { display: none !important; }
+    .mapTri > [data-mp] { grid-area: stage; align-self: start; position: relative; z-index: 1; box-sizing: border-box; border: 3px solid transparent !important; border-radius: 16px !important; background: transparent !important; padding: 16px !important; gap: 4px !important; width: 100%; transition: transform 0.6s cubic-bezier(0.65,0,0.35,1), border-color 0.25s ease, background-color 0.25s ease, border-radius 0.6s ease; }
+    .mapTri > [data-mp="kr"] { justify-self: start; transform-origin: 0 0; } .mapTri > [data-mp="jp"] { justify-self: end; transform-origin: 100% 0; }
+    .mapTri > [data-mp]:not([data-open="true"]) { z-index: 2; align-self: stretch; border-color: #5B7190 !important; border-width: 5px !important; border-radius: 34px !important; background-color: #fff !important; transition: transform 0.6s cubic-bezier(0.65,0,0.35,1), border-color 0.3s ease 0.35s, background-color 0.3s ease 0.35s, border-radius 0.6s ease; }
+    .mapTri > [data-mp]:not([data-open="true"]) > div:has(> [data-map-panel]) { align-items: flex-start !important; }
+    .mapTri > [data-mp] .mpHead { height: 83px; flex: none; }
+    .mapTri > [data-mp] [data-map-panel] { transition: transform 0.6s cubic-bezier(0.65,0,0.35,1); }
+    .mapTri > [data-mp]:not([data-open="true"]) [data-map-panel] { transform: scale(0.8); transform-origin: 50% 0; }
+    .mapTri > [data-mp] > .mpBoxLbl { display: flex !important; position: absolute; left: 36px; bottom: 30px; align-items: center; gap: 8px; font-size: 30px; font-weight: 700; color: #1F3A5F; white-space: nowrap; opacity: 0; transition: opacity 0.2s ease; pointer-events: none; }
+    .mapTri > [data-mp] > .mpBoxLbl[data-lang="ko"] { font-size: 35px; }
+    .mapTri > [data-mp][data-open="true"] { padding-bottom: 36px !important; }
+    .mapTri > .mpHint { display: block !important; grid-area: stage; align-self: end; justify-self: center; margin: 0 0 12px !important; position: relative; z-index: 3; font-size: 12.5px; color: #4a5260; pointer-events: none; }
+    .mapTri > [data-mp]:not([data-open="true"]) > .mpBoxLbl { opacity: 1; transition: opacity 0.3s ease 0.4s; } .mapTri > [data-mp="kr"]:not([data-open="true"]) { transform: translate(6px,6px) scale(0.36); } .mapTri > [data-mp="jp"]:not([data-open="true"]) { transform: translate(-6px,6px) scale(0.36); }
+    .mapTri > [data-mp] [data-map-panel] { max-width: 100% !important; }
+    .mapTri > [data-mp="kr"] [data-map-panel] { transition: transform 0.6s cubic-bezier(0.65,0,0.35,1); }
+    .mapTri > [data-mp="kr"][data-open="true"] [data-map-panel] { transform: translateX(-10%); } .mapTri > [data-mp][data-open="true"] { clip-path: inset(0 round 16px); }
+    .mapTri > [data-mp]:not([data-open="true"]) [data-map-panel] > div:first-child > div, .mapTri > [data-mp]:not([data-open="true"]) [data-map-panel] > div:nth-child(2) { display: none !important; }
+    .mapTri > [data-mp]:not([data-open="true"]) .mpHead > div > div:nth-child(2) { display: none !important; }
+    .mapTri > [data-mp]:not([data-open="true"]) .mpHead > div > div:first-child { font-size: 32px !important; }
+    .mapTri > [data-mp] [data-map-panel] > div:first-child > div { animation: mpInfoIn 0.4s 0.35s ease both; }
+    .mapTri > [data-mp][data-open="true"] .mpHead { max-width: 62%; }
+    .mapTri .mpHead > div > div:nth-child(2) > div { white-space: nowrap; }
+    .mapTri > [data-mp][data-open="true"] .mpHead > div > div:nth-child(2) { flex-direction: column; align-items: flex-start !important; gap: 2px !important; }
+    .mapTri > [data-mp="jp"][data-open="true"] .mpHead { margin-left: auto; text-align: right; }
+    .mapTri > [data-mp="jp"]:not([data-open="true"]) .mpHead { text-align: right; }
+    .mapTri > [data-mp="jp"][data-open="true"] .mpHead > div > div:nth-child(2) { align-items: flex-end !important; }
+    .mapTri .mpToggle { display: none; }
+    .mapTri > [data-mp]:not([data-open="true"]) .mpToggle { display: block !important; position: absolute; inset: 0; z-index: 25; background: transparent; border: 0; padding: 0; cursor: pointer; }
+    .mapTri .mpPlus { display: none !important; }
+    section[data-board-snap]:has(.mapTri) { justify-content: flex-start !important; padding-top: 28px !important; } }
+  @keyframes mpInfoIn { from { opacity: 0; transform: translateY(-6px); } to { opacity: 1; transform: none; } }
   @media (max-width: 700px) {
       }
   .hTab { position: relative; transition: background 0.25s ease; }
@@ -258,8 +295,9 @@
   @media (max-width: 860px) { .orgGrid { grid-template-columns: 1fr !important; gap: 18px !important; } .orgBar, .orgStem { display: none !important; } }
   .certTile:hover .certImg { transform: scale(1.03); }
   @media (max-width: 1180px) { .certGrid { grid-template-columns: repeat(3, minmax(0,1fr)) !important; } }
-  @media (max-width: 900px) { .certGrid { grid-template-columns: repeat(2, minmax(0,1fr)) !important; } .certModal { grid-template-columns: 1fr !important; grid-template-rows: minmax(0,44%) minmax(0,1fr) !important; } }
-  .certNav:hover { background: rgba(255,255,255,0.3) !important; }
+  @media (max-width: 900px) { .certGrid { grid-template-columns: repeat(2, minmax(0,1fr)) !important; } .certModal { grid-template-columns: 1fr !important; grid-template-rows: minmax(0,44%) minmax(0,1fr) !important; } .certNav { top: 22% !important; width: 38px !important; height: 38px !important; } }
+  @media (hover: hover) and (min-width: 1181px) { .certNav:hover { background: rgba(255,255,255,0.3) !important; } }
+  @media (hover: hover) and (max-width: 1180px) { .certNav:hover { background: rgba(10,22,40,0.6) !important; } }
   .certNav:active { transform: translateY(-50%) scale(0.94) !important; }
   @media (max-width: 1180px) {
     .certNavPrev { left: 10px !important; background: rgba(10,22,40,0.42) !important; }
@@ -404,7 +442,7 @@
   </sc-if>
 
   <sc-if value="{{ intro }}" hint-placeholder-val="{{ true }}">
-    <div role="presentation" aria-label="SD ENERGY" style="position: fixed; inset: 0; z-index: 9999; display: flex; align-items: center; justify-content: center; overflow: hidden; background: radial-gradient(ellipse at 50% 46%, #13233c 0%, #0a1628 55%, #060d19 100%); animation: introOut 1.1s cubic-bezier(0.4,0,0.2,1) 2.4s forwards;">
+    <div role="presentation" aria-label="SD ENERGY" style="position: fixed; inset: 0; z-index: 9999; display: flex; align-items: center; justify-content: center; overflow: hidden; background: radial-gradient(ellipse at 50% 46%, #13233c 0%, #0a1628 55%, #060d19 100%); animation: introOut 1.1s cubic-bezier(0.4,0,0.2,1) 2.8s forwards;">
       <div style="position: relative; display: flex; align-items: center; justify-content: center;">
         <div style="width: min(clamp(120px, 13.4vw, 190px), 37vw, 27vh); transform-origin: 50% 50%; animation: sdIntroFade 3.1s cubic-bezier(0.45,0,0.2,1) both; will-change: opacity, transform, filter;">
           <img src="images/logo-sd-mark.webp" alt="SD ENERGY" style="display: block; width: 100%; height: auto; filter: drop-shadow(0 0 22px rgba(200,163,96,0.22));">
@@ -633,16 +671,25 @@
             <button type="button" onClick="{{ setViewList }}" title="{{ viewListLabel }}" aria-label="{{ viewListLabel }}" style="{{ viewListBtn }}"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="8" y1="6" x2="21" y2="6"></line><line x1="8" y1="12" x2="21" y2="12"></line><line x1="8" y1="18" x2="21" y2="18"></line><line x1="3" y1="6" x2="3.01" y2="6"></line><line x1="3" y1="12" x2="3.01" y2="12"></line><line x1="3" y1="18" x2="3.01" y2="18"></line></svg></button>
           </div>
         </div>
-        <div class="mapTri" style="display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1fr) minmax(0,1.05fr); gap: clamp(16px,1.8vw,28px); align-items: stretch;">
+        <div class="mapTri" data-open-rg="{{ mapOpenRg }}" style="display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1fr) minmax(0,1.05fr); gap: clamp(16px,1.8vw,28px); align-items: stretch;">
+          <div class="mpStage" aria-hidden="true" style="display: none;"></div>
+          <p class="mpHint" style="display: none; margin: 0;">{{ mpHintTxt }}</p>
+          <div class="mpZoom" onClick="{{ stop }}" onMouseDown="{{ stop }}" onDoubleClick="{{ stop }}" style="display: none; flex-direction: column; gap: 6px;">
+            <button type="button" data-region="{{ mapOpenRg }}" onClick="{{ mpZoomIn }}" title="{{ zoomInLabel }}" aria-label="{{ zoomInLabel }}" style="width: 30px; height: 30px; padding: 0; border-radius: 8px; border: 1px solid #DCE1EA; background: rgba(255,255,255,0.94); color: #0f1a2e; font-weight: 700; cursor: pointer; line-height: 1; display: flex; align-items: center; justify-content: center; font-size: 16px;">+</button>
+            <button type="button" data-region="{{ mapOpenRg }}" onClick="{{ mpZoomOut }}" title="{{ zoomOutLabel }}" aria-label="{{ zoomOutLabel }}" style="width: 30px; height: 30px; padding: 0; border-radius: 8px; border: 1px solid #DCE1EA; background: rgba(255,255,255,0.94); color: #0f1a2e; font-weight: 700; cursor: pointer; line-height: 1; display: flex; align-items: center; justify-content: center; font-size: 18px;">−</button>
+            <button type="button" data-region="{{ mapOpenRg }}" onClick="{{ mpZoomReset }}" title="{{ zoomResetLabel }}" aria-label="{{ zoomResetLabel }}" style="width: 30px; height: 30px; padding: 0; border-radius: 8px; border: 1px solid #DCE1EA; background: rgba(255,255,255,0.94); color: #0f1a2e; font-weight: 700; cursor: pointer; line-height: 1; display: flex; align-items: center; justify-content: center; font-size: 11px;">{{ mpZoomLbl }}</button>
+          </div>
           <sc-for list="{{ mapPanels }}" as="mp" hint-placeholder-count="2">
-            <div style="border: 1px solid #DCE1EA; border-radius: 16px; background: #fff; padding: clamp(16px,1.5vw,22px); display: flex; flex-direction: column; gap: 14px; min-width: 0;">
-              <div>
+            <div data-mp="{{ mp.key }}" data-open="{{ mp.open }}" style="border: 1px solid #DCE1EA; border-radius: 16px; background: #fff; padding: clamp(16px,1.5vw,22px); display: flex; flex-direction: column; gap: 14px; min-width: 0;">
+              <button type="button" class="mpToggle" data-region="{{ mp.key }}" aria-expanded="{{ mp.open }}" aria-label="{{ mp.region }}" onClick="{{ mpToggle }}" style="display: none;"><span class="mpPlus" aria-hidden="true" style="position: absolute; width: 16px; height: 16px; color: #2b333d; transition: transform 0.5s cubic-bezier(0.65,0,0.35,1);"><span style="position: absolute; left: 0; right: 0; top: 50%; height: 1.5px; margin-top: -0.75px; background: currentColor;"></span><span style="position: absolute; top: 0; bottom: 0; left: 50%; width: 1.5px; margin-left: -0.75px; background: currentColor; transition: transform 0.5s cubic-bezier(0.65,0,0.35,1);"></span></span></button>
+              <div class="mpBoxLbl" data-lang="{{ siteLang }}" aria-hidden="true" style="display: none;">{{ mp.boxLbl }}<svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg></div>
+              <div class="mpHead"><div>
                 <div style="font-size: 12.5px; font-weight: 700; letter-spacing: 0.08em; color: #62723A;">{{ mp.region }}</div>
                 <div style="display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 4px 12px; margin-top: 4px;">
                   <div style="font-size: 19px; font-weight: 700; color: #0f1a2e;">{{ mp.title }}</div>
                   <div style="font-size: 13.5px; color: #4a5260;">{{ mapTotalLabel }} <span style="font-weight: 800; color: #1F3A5F; font-size: 18px;">{{ mp.count }}</span> {{ mapTotalUnit }}</div>
                 </div>
-              </div>
+              </div></div>
               <sc-if value="{{ isMapView }}" hint-placeholder-val="{{ true }}">
               <div style="flex: 1; display: flex; align-items: center; justify-content: center;">
                 <div data-map-panel="{{ mp.key }}" data-region="{{ mp.key }}" ref="{{ mp.wheelRef }}" onMouseDown="{{ mpDown }}" onDoubleClick="{{ mpZoomReset }}" style="{{ mp.boxStyle }}">
@@ -679,7 +726,7 @@
               </sc-if>
             </div>
           </sc-for>
-          <div class="mapInfo" style="display: flex; min-width: 0;">
+          <div class="mapInfo" data-info-rg="{{ mapInfoRg }}" style="display: flex; min-width: 0;">
             <sc-if value="{{ mapHasSel }}" hint-placeholder-val="{{ false }}">
             <div style="flex: 1; display: flex; flex-direction: column; border: 1px solid #DCE1EA; border-radius: 16px; overflow: hidden; background: #fff; box-shadow: 0 14px 34px rgba(13,27,48,0.1);">
               <div style="{{ mapPhotoBoxStyle }}">
@@ -706,6 +753,9 @@
           <sc-if value="{{ mapNoSel }}" hint-placeholder-val="{{ true }}">
             <div style="flex: 1; display: flex; align-items: center; justify-content: center; border: 1px dashed #c9d2de; border-radius: 16px; padding: 40px 28px; text-align: center; color: #95a2b0; font-size: 13.5px; line-height: 1.8; background: #fff;">{{ mapHintSub }}</div>
           </sc-if>
+          </div>
+          <div class="mapAlt" data-info-rg="{{ mapAltRg }}" style="display: none; min-width: 0;">
+            <div style="flex: 1; display: flex; align-items: center; justify-content: center; border: 1px dashed #c9d2de; border-radius: 16px; padding: 40px 28px; text-align: center; color: #95a2b0; font-size: 13.5px; line-height: 1.8; background: #fff;">{{ mapHintSub }}</div>
           </div>
         </div>
       </div>
@@ -3419,7 +3469,7 @@ class Component extends DCLogic {
     this._timer = setInterval(() => {
       if (this.state.playing && !this.state.menuOpen && this.state.page === "home") this.setState((s) => ({ slide: (s.slide + 1) % 4 }));
     }, 5000);
-    this._introT = setTimeout(() => this.setState({ intro: false }), 3500);
+    this._introT = setTimeout(() => this.setState({ intro: false }), 4000);
     document.querySelectorAll("#sdProg").forEach((n) => n.remove());
     this._sticky = () => {};
     this._parallax = () => {
@@ -5529,7 +5579,8 @@ class Component extends DCLogic {
       mpDown: (e) => { const rg = e.currentTarget.dataset.region; if ((this.state.mapZoomRg || "kr") !== rg) return; this._mapWheelEl = e.currentTarget; this._mapDown(e); },
       zoomInLabel: isKo ? "확대" : "Zoom in", zoomOutLabel: isKo ? "축소" : "Zoom out", zoomResetLabel: isKo ? "원래대로" : "Reset zoom",
       viewMapLabel: isKo ? "지도로 보기" : "Map view", viewListLabel: isKo ? "목록으로 보기" : "List view",
-      projTabsShow: !!st.isMobile,
+      projTabsShow: false,
+      mapInfoRg: String(mapSel || "").indexOf("jp:") === 0 ? "jp" : "kr", mapAltRg: String(mapSel || "").indexOf("jp:") === 0 ? "kr" : "jp",
       projTabs: [["kr", isKo ? "국내" : "Korea"], ["jp", isKo ? "해외" : "Overseas"]].map((a) => { const on = (st.mapRegion || "kr") === a[0]; return { key: a[0], label: a[1], count: String(allPlants.filter((p) => p.region === a[0]).length), style: { display: "inline-flex", alignItems: "center", gap: 8, height: 40, padding: "0 16px", borderRadius: 999, cursor: "pointer", border: "1px solid " + (on ? "#1F3A5F" : "#DCE1EA"), background: on ? "#1F3A5F" : "#fff", color: on ? "#fff" : "#4a5260" }, countStyle: { fontSize: 12.5, fontWeight: 700, fontFamily: "var(--font-data)", color: on ? "#fff" : "#4a5260" } }; }),
       mapPanels: (() => {
         if (inAdmin || !(page === "projects" || page === "projects-jp")) return [];
@@ -5573,8 +5624,7 @@ class Component extends DCLogic {
               dot: { position: "absolute", left: "50%", top: "50%", width: "17px", height: "17px", marginLeft: "-8.5px", marginTop: "-8.5px", padding: 0, boxSizing: "border-box", borderRadius: "50%", cursor: "pointer", background: "#62723A", border: "2.5px solid #fff", transform: "scale(" + (((sel || hov) ? 1.35 : 1) * k).toFixed(4) + ")", boxShadow: (sel || hov) ? "0 3px 12px rgba(98,114,58,0.6)" : "0 1px 4px rgba(0,0,0,0.35)", transition: "transform 0.34s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.34s ease" } };
           });
         };
-        const mob = !!st.isMobile, cur = st.mapRegion || "kr";
-        return [false, true].filter((isJp) => !mob || (cur === "jp") === isJp).map((isJp) => { const ms = mk(isJp); const act = (st.mapZoomRg || "kr") === (isJp ? "jp" : "kr"); const Z = act ? (st.mapZoom || 1) : 1; return { boxStyle: { position: "relative", width: "100%", maxWidth: "min(460px, calc((100vh - 320px) * 0.957))", aspectRatio: "444 / 464", overflow: "hidden", cursor: Z > 1.01 ? (st.mapDragging ? "grabbing" : "grab") : "default" }, innerStyle: { position: "absolute", inset: 0, transform: "scale(" + Z + ")", transformOrigin: (act ? st.mapOX : 50) + "% " + (act ? st.mapOY : 50) + "%", transition: st.mapDragging ? "none" : "transform 0.16s cubic-bezier(0.33,0.02,0.15,1)" }, wheelRef: (this._mpRefs || (this._mpRefs = { kr: (el) => this._mpWheelBind("kr", el), jp: (el) => this._mpWheelBind("jp", el) }))[isJp ? "jp" : "kr"], zoomLabel: (Math.round(Z * 10) / 10) + "x", empty: ms.length === 0, key: isJp ? "jp" : "kr", region: isJp ? (isKo ? "해외" : "OVERSEAS") : (isKo ? "국내" : "KOREA"), title: isJp ? (isKo ? "ESS 사업" : "ESS Business") : c.map.title, count: String(ms.length), vector: vec(isJp), markers: ms }; });
+        return [false, true].map((isJp) => { const ms = mk(isJp); const act = (st.mapZoomRg || "kr") === (isJp ? "jp" : "kr"); const Z = act ? (st.mapZoom || 1) : 1; return { boxStyle: { position: "relative", width: "100%", maxWidth: "min(460px, calc((100vh - 320px) * 0.957))", aspectRatio: "444 / 464", overflow: "hidden", cursor: Z > 1.01 ? (st.mapDragging ? "grabbing" : "grab") : "default" }, innerStyle: { position: "absolute", inset: 0, transform: "scale(" + Z + ")", transformOrigin: (act ? st.mapOX : 50) + "% " + (act ? st.mapOY : 50) + "%", transition: st.mapDragging ? "none" : "transform 0.16s cubic-bezier(0.33,0.02,0.15,1)" }, wheelRef: (this._mpRefs || (this._mpRefs = { kr: (el) => this._mpWheelBind("kr", el), jp: (el) => this._mpWheelBind("jp", el) }))[isJp ? "jp" : "kr"], zoomLabel: (Math.round(Z * 10) / 10) + "x", empty: ms.length === 0, key: isJp ? "jp" : "kr", open: (st.mobRg || "kr") === (isJp ? "jp" : "kr") ? "true" : "false", boxLbl: isJp ? (isKo ? "일본 프로젝트" : "Japan Projects") : (isKo ? "국내 프로젝트" : "Korea Projects"), region: isJp ? (isKo ? "해외" : "OVERSEAS") : (isKo ? "국내" : "KOREA"), title: isJp ? (isKo ? "ESS 사업" : "ESS Business") : c.map.title, count: String(ms.length), vector: vec(isJp), markers: ms }; });
       })(),
       mapHasSel: !!selPlant, mapNoSel: !selPlant, mapCardStyle,
       isMapView: st.mapView !== "list", isListView: st.mapView === "list",
@@ -5593,6 +5643,9 @@ class Component extends DCLogic {
           countStyle: { fontSize: "12.5px", color: cur === t.key ? "rgba(255,255,255,0.62)" : "#9a9fb0" },
         }));
       })(),
+      mapOpenRg: st.mobRg || "kr", mpHintTxt: isKo ? "작은 지도를 누르면 국가가 전환됩니다." : "Tap the small map to switch countries.",
+      mpZoomLbl: (() => { const Z = (st.mapZoomRg || "kr") === (st.mobRg || "kr") ? (st.mapZoom || 1) : 1; return (Math.round(Z * 10) / 10) + "x"; })(),
+      mpToggle: (e) => { if (!(window.innerWidth < 1000)) return; const rg = e.currentTarget.dataset.region; if ((st.mobRg || "kr") === rg) return; const s = { mobRg: rg, mapZoomRg: rg, mapZoom: 1, mapOX: 50, mapOY: 50, mapDragging: false }; if (rg) Object.assign(s, { mapRegion: rg, mapSel: rg === "jp" ? "jp:" + this._featuredId("jp") : this._hyeondongId() }); this.setState(s); },
       setRegion: (e) => { const rg = e.currentTarget.dataset.region; if (rg === (st.mapRegion || "kr")) return; this.setState({ mapRegion: rg, mapSel: rg === "jp" ? "jp:" + this._featuredId("jp") : this._hyeondongId(), mapZoom: 1, mapOX: 50, mapOY: 50, mapDragging: false }); },
       setViewMap: () => this.setState({ mapView: "map" }),
       setViewList: () => this.setState({ mapView: "list" }),
